@@ -11,8 +11,7 @@ import 'package:ieeecrop/Functions_and_route.dart';
 //Profile page
 
 class UserScreen extends StatelessWidget with DrawerStates{
-  User user;
-  UserScreen(this.user);
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, height: 896, width: 414, allowFontScaling: true);
@@ -72,12 +71,12 @@ class UserScreen extends StatelessWidget with DrawerStates{
 
             SizedBox(height: kSpacingUnit.w * 2),
             Text(
-              '${user.username}',
+              'NULL',
               style: kTitleTextStyle,
             ),
             SizedBox(height: kSpacingUnit.w * 0.5),
             Text(
-              '${user.email}',
+              'NULL',
               style: kCaptionTextStyle,
             ),
             SizedBox(height: kSpacingUnit.w * 2),

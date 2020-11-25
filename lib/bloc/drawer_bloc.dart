@@ -14,8 +14,6 @@ abstract class DrawerStates {}
 // Used for navigating between different blocs
 
 class DrawerBloc extends Bloc<DrawerEvents, DrawerStates> {
-  User user;
-  DrawerBloc(this.user);
   @override
   DrawerStates get initialState => Main_menu();
   @override
@@ -25,7 +23,7 @@ class DrawerBloc extends Bloc<DrawerEvents, DrawerStates> {
         yield Main_menu();
         break;
       case DrawerEvents.ProfileEvent:
-        yield UserScreen(user);
+        yield UserScreen();
         break;
       case DrawerEvents.news:
         yield Maati_news();

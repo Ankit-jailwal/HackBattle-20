@@ -25,6 +25,7 @@ class about_us extends StatelessWidget with DrawerStates {
                   style: TextStyle(
                     fontSize: 20,
                   ),
+                  textAlign: TextAlign.center,
                 )),
           ),
           SizedBox(

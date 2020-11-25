@@ -3,6 +3,8 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:ieeecrop/config/config.dart';
 
+import '../main.dart';
+
 class AuthenticationService {
   static AuthenticationService _singleton;
 
@@ -34,7 +36,9 @@ class AuthenticationService {
 
 //TOKEN
 
-  Future login(String email, String password) async {
+  Future login() async {
+    final email= await storage.read(key: 'email');
+    final password=await  storage.read(key: 'password');
     final String url = server + "/user/login";
 
     Map<String, String> data = {"username": email, "password": password};
@@ -46,10 +50,11 @@ class AuthenticationService {
     print(response.body);
     if (response.statusCode == 200) {
       _setAuthToken(body["token"]);
-      return response.body;
+      var data = jsonDecode(response.body);
+      return data;
     }
     else
-      return null;
+      return jsonDecode(response.body);
   }
 
   Future<void> _setAuthToken(String token) {

@@ -20,7 +20,7 @@ class _HomePageState extends State<mainpage> {
         builder: (context) {
           return Scaffold(
             body: BlocProvider<DrawerBloc>(
-              create: (context) => DrawerBloc(null),
+              create: (context) => DrawerBloc(),
               child: DrawerLayout(),
             ),
           );

@@ -84,7 +84,6 @@ class _LoginPageState extends State<LoginPage> {
                                 fit: BoxFit.fill)),
                       ),
                     ),
-
                   ]),
                 ),
                 Padding(
@@ -126,40 +125,10 @@ class _LoginPageState extends State<LoginPage> {
                                final String email = namecontroller.text;
                                final String password = phonecontroller.text;
                                //print("$email $password");
-                               final _token = await AuthenticationService()
-                                   .login(email, password);
-                               if (_token != null) {
-                                 var data = json.decode(_token);
-                                 var rest = data["token"] as String;
-                                 storage.write(key: "jwt", value: rest);  //Storing token in local storage
-                                 print(rest);
-                                 Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => mainpage()));
-                               } else {
-                                 showDialog(
-                                     context: context,
-                                     builder: (_) => NetworkGiffyDialog(
-                                       key: keys[1],
-                                       image: Image.network(
-                                         "https://media.giphy.com/media/l0DAGyhYqdLsPREJO/giphy.gif",
-                                         fit: BoxFit.cover,
-                                       ),
-                                       entryAnimation: EntryAnimation.TOP_LEFT,
-                                       title: Text(
-                                         translations.text('login.er'),
-                                         textAlign: TextAlign.center,
-                                         style: TextStyle(
-                                             fontSize: 22.0, fontWeight: FontWeight.w600),
-                                       ),
-                                       description: Text(
-                                         translations.text('login.des'),
-                                         textAlign: TextAlign.center,
-                                       ),
-                                       onlyOkButton: true,
-                                       onOkButtonPressed: (){
-                                         Navigator.pop(context);
-                                       },
-                                     ));
-                               }
+                               storage.write(key: "email", value: email);
+                               storage.write(key: "password", value: password);
+                               Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => mainpage()));
+
                               },
                               child: Center(
                                 child: Text(

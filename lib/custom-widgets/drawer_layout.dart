@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ieeecrop/Language/translation/bloc/translation_bloc.dart';
@@ -12,6 +14,7 @@ import 'package:ieeecrop/pages/Main_menu.dart';
 import 'package:ieeecrop/pages/Profile_page.dart';
 import 'package:ieeecrop/pages/News_feed.dart';
 import 'package:ieeecrop/second_screen.dart';
+import 'package:ieeecrop/services/authentication-service.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../Functions_and_route.dart';
 import '../Navigate_to_weather_api.dart';
@@ -23,38 +26,44 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:ieeecrop/constants.dart';
 
 class DrawerLayout extends StatefulWidget {
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<DrawerLayout> {
+class _HomePageState extends State<DrawerLayout>{
   @override
   Widget build(BuildContext context) {
     return Container(
         child: FutureBuilder(
-      //Future builder to retrieve data from server
-      future: getuser(),
+      future: AuthenticationService()
+          .login(),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
-        print(snapshot.data);
         if (snapshot.data == null) {
           return Center(
             child: CircularProgressIndicator(), //Circular progress indicator
           );
-        } else {
+        }
+        else if (snapshot.data['token'] != null) {
+          print(snapshot.data);
+          var rest = snapshot.data['token'] as String;
+          storage.write(key: "jwt", value: rest);  //Storing token in local storage
           return ThemeProvider(
             initTheme: kLightTheme,
             child: Builder(
               builder: (context) {
-                return MaterialApp(
-                  debugShowCheckedModeBanner: false,
-                  title: 'IEEE APP',
-                  theme: ThemeProvider.of(context),
-                  home: BlocProvider<DrawerBloc>(
-                    create: (context) => DrawerBloc(snapshot.data),
-                    child: Drawermain(snapshot.data),
-                  ),
+                return  BlocProvider<DrawerBloc>(
+                  create: (context) => DrawerBloc(),
+                  child: Drawermain(),
                 );
               },
+            ),
+          );
+        }
+        else {
+          return Container(
+            child: Center(
+              child: Text(snapshot.data['message']),
             ),
           );
         }
@@ -64,10 +73,8 @@ class _HomePageState extends State<DrawerLayout> {
 }
 
 class Drawermain extends StatefulWidget {
-  final User user;
-  Drawermain(this.user);
   @override
-  _DrawermainState createState() => _DrawermainState(user);
+  _DrawermainState createState() => _DrawermainState();
 }
 
 class _DrawermainState extends State<Drawermain>
@@ -83,8 +90,6 @@ class _DrawermainState extends State<Drawermain>
     return degree / unitRadian;
   }
 
-  final User user;
-  _DrawermainState(this.user);
   final GlobalKey<ScaffoldState> _scaffoldKey =
       GlobalKey<ScaffoldState>(); //Global key
   @override
@@ -309,14 +314,6 @@ class _DrawermainState extends State<Drawermain>
                           },
                           child: RichText(
                             text: TextSpan(children: [
-                              TextSpan(
-                                text: "Not ${user.username}?",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Theme.of(context).primaryColorDark,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
                               TextSpan(
                                 text: translations.text('login.out'), //Signout
                                 style: TextStyle(
