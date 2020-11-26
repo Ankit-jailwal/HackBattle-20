@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:ieeecrop/Weahter_API/resources/repository/remote/weather_api_provider.dart';
 import 'package:ieeecrop/main.dart';
 import 'package:ieeecrop/pages/Main_menu.dart';
@@ -203,13 +204,24 @@ get_lang(String lang){
   return l;
 }
 
-Future crop_api_call(String base64,String temperature,String date,String pos) async{
+Future crop_api_call(String base64) async{
   final String url="http://20.185.199.129:5000";
+  var position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.best);
+  String pos = (position.latitude).toString() +
+      "," +
+      (position.longitude).toString();
+  var res = await weatherApiProvider.fetchWeather1(
+      position.longitude,position.longitude);
+  print(res);
+  var body = jsonDecode(res);
+  temp = (body['main']['temp']).toString();
+  String date = (DateTime.now()).toString();
   Map<String, String>data= {
     "base64":base64,
     "ID":"1.png",
     "Loc_Cordinates":pos,
-    "Temperature":temperature,
+    "Temperature":temp,
     "date": date
   };
   final response= await http.post(url, headers: {"Content-Type": "application/json"},body:json.encode(data)
@@ -217,7 +229,7 @@ Future crop_api_call(String base64,String temperature,String date,String pos) as
   print(response.statusCode);
   print(response.body);
   if(response.statusCode==200)
-   return response.body;
+   return jsonDecode(response.body);
   else
     return null;
 }

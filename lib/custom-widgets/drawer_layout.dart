@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:ieeecrop/Language/translation/bloc/translation_bloc.dart';
 import 'package:ieeecrop/Language/translation/global_translation.dart';
 import 'package:ieeecrop/bloc/drawer_bloc.dart';
@@ -26,45 +27,55 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:ieeecrop/constants.dart';
 
 class DrawerLayout extends StatefulWidget {
-
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<DrawerLayout>{
+class _HomePageState extends State<DrawerLayout> {
   @override
   Widget build(BuildContext context) {
     return Container(
         child: FutureBuilder(
-      future: AuthenticationService()
-          .login(),
+      future: AuthenticationService().login(),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (snapshot.data == null) {
           return Center(
             child: CircularProgressIndicator(), //Circular progress indicator
           );
-        }
-        else if (snapshot.data['token'] != null) {
+        } else if (snapshot.data['token'] != null) {
           print(snapshot.data);
           var rest = snapshot.data['token'] as String;
-          storage.write(key: "jwt", value: rest);  //Storing token in local storage
-          return ThemeProvider(
-            initTheme: kLightTheme,
-            child: Builder(
-              builder: (context) {
-                return  BlocProvider<DrawerBloc>(
-                  create: (context) => DrawerBloc(),
-                  child: Drawermain(),
-                );
-              },
+          storage.write(
+              key: "jwt", value: rest); //Storing token in local storage
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'IEEE APP',
+            theme: ThemeProvider.of(context),
+            home: BlocProvider<DrawerBloc>(
+              create: (context) => DrawerBloc(),
+              child: Drawermain(),
             ),
           );
-        }
-        else {
-          return Container(
-            child: Center(
-              child: Text(snapshot.data['message']),
+        } else {
+          return NetworkGiffyDialog(
+            image: Image.network(
+              "https://media.giphy.com/media/l4pLY0zySvluEvr0c/giphy.gif",
+              fit: BoxFit.cover,
             ),
+            entryAnimation: EntryAnimation.TOP_LEFT,
+            title: Text(
+              translations.text('login.er'),
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600),
+            ),
+            description: Text(
+              translations.text('login.des'),
+              textAlign: TextAlign.center,
+            ),
+            onlyOkButton: true,
+            onOkButtonPressed: () {
+              Navigator.pop(context);
+            },
           );
         }
       },
@@ -127,8 +138,6 @@ class _DrawermainState extends State<Drawermain>
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return OrientationBuilder(
       builder: (context, orientation) {
         return BlocBuilder<TranslationBloc, TranslationState>(
@@ -220,10 +229,8 @@ class _DrawermainState extends State<Drawermain>
                         GestureDetector(
                           onTap: () {
                             Navigator.of(context).pop();
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => mainpage()));
+                            BlocProvider.of<DrawerBloc>(context)
+                                .add(DrawerEvents.menu);
                           },
                           child: Container(
                             height: 40,
@@ -246,7 +253,7 @@ class _DrawermainState extends State<Drawermain>
                             Navigator.pop(context);
                             BlocProvider.of<DrawerBloc>(context).add(
                                 DrawerEvents
-                                    .Createevent); //Drawer navigation to Event screen
+                                    .cam); //Drawer navigation to Event screen
                           },
                         ),
                         DrawerItem(
@@ -293,7 +300,8 @@ class _DrawermainState extends State<Drawermain>
                             value: state.locale.languageCode,
                             items: translations.supportedLocales().map((l) {
                               return DropdownMenuItem(
-                                child: Text('${get_lang(l.languageCode)} (${l.languageCode})'),
+                                child: Text(
+                                    '${get_lang(l.languageCode)} (${l.languageCode})'),
                                 value: l.languageCode,
                               );
                             }).toList(),
@@ -302,10 +310,7 @@ class _DrawermainState extends State<Drawermain>
                                 SwitchLanguage(language: l),
                               );
                               print(l);
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => mainpage()),
-                              );
+
                             }),
                         FlatButton(
                           onPressed: () {
@@ -319,7 +324,6 @@ class _DrawermainState extends State<Drawermain>
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Theme.of(context).primaryColorDark,
-                                  decoration: TextDecoration.underline,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),

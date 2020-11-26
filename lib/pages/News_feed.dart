@@ -18,7 +18,7 @@ class Maati_news extends StatefulWidget with DrawerStates{
 class Maati_newsState extends State<Maati_news> {
   //
   static const String FEED_URL =
-      'https://rss.app/feeds/ksPAwI9FdqDoNvI8.xml';
+      'https://rss.app/feeds/c8mJwoP9q0WavQdI.xml';
   RssFeed _feed;
   String _title;
   static const String loadingFeedMsg = 'Loading Feed...';

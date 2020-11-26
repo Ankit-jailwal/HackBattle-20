@@ -1,9 +1,7 @@
-import 'dart:io' as Io;
 import 'dart:io';
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:ieeecrop/Language/translation/global_translation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ieeecrop/bloc/drawer_bloc.dart';
@@ -78,30 +76,11 @@ class _maaticamState extends State<maaticam> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: FlatButton(
-                          onPressed: () async {
-                            var position = await Geolocator.getCurrentPosition(
-                                desiredAccuracy: LocationAccuracy.best);
-                            String pos = (position.latitude).toString() +
-                                "," +
-                                (position.longitude).toString();
-                            var res = await weatherApiProvider.fetchWeather1(
-                                28.7041, 77.1025);
-                            print(res);
-                            var body = jsonDecode(res);
-                            temp = (body['main']['temp']).toString();
-                            String date = (DateTime.now()).toString();
-                            print(pos);
-                            print(date);
-                            var data =
-                                await crop_api_call(_base64, temp, date, pos);
-                            print("data:$data");
-                            print(data.runtimeType);
-                            var json = jsonDecode(data);
-                            print(json);
+                          onPressed: ()  {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => output(json)),
+                                  builder: (context) => output(_base64)),
                             );
                           },
                           child: Container(
@@ -131,94 +110,132 @@ class _maaticamState extends State<maaticam> {
 }
 
 class output extends StatelessWidget with DrawerStates {
-  var js;
-  output(this.js);
+  var base64;
+  output(this.base64);
   @override
   Widget build(BuildContext context) {
     return
-
-      Scaffold(
-        appBar: AppBar(
-          title: Text(translations.text('output.head')),
-        ),
-        body: ListView.builder(
-        itemCount: 1,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.only(left: 10, right: 10),
-            child: Column(
-              children: [
-                Card(
-                  //                           <-- Card widget
-                  child: ListTile(
-                    subtitle: Text(js['Data']['Crops'] ?? ""),
-                    title: Text(translations.text('output.o1')),
-                    trailing:Image.asset("assets/crop.png")
-                  ),
-                ),
-                Card(
-                  //                           <-- Card widget
-                  child: ListTile(
-                    subtitle: Text(js['Data']['Fertilisers required'] ?? ""),
-                    title: Text(translations.text('output.o2')
+      FutureBuilder(
+        future: crop_api_call(base64),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (snapshot.data == null) {
+            return Container(
+              child: Center(
+                child: CircularProgressIndicator(), //Circular progress indicator
+              ),
+            );
+          }
+          else if (snapshot.data!= null) {
+            final data=snapshot.data;
+            return Scaffold(
+              appBar: AppBar(
+                title: Text(translations.text('output.head')),
+              ),
+              body: ListView.builder(
+                itemCount: 1,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.only(left: 10, right: 10),
+                    child: Column(
+                      children: [
+                        Card(
+                          //                           <-- Card widget
+                          child: ListTile(
+                              subtitle: Text(data['Data']['Crops'] ?? ""),
+                              title: Text(translations.text('output.o1')),
+                              trailing:Image.asset("assets/crop.png")
+                          ),
+                        ),
+                        Card(
+                          //                           <-- Card widget
+                          child: ListTile(
+                              subtitle: Text(data['Data']['Fertilisers required'] ?? ""),
+                              title: Text(translations.text('output.o2')
+                              ),
+                              trailing: Image.asset("assets/fertilizer.png")
+                          ),
+                        ),
+                        Card(
+                          //                           <-- Card widget
+                          child: ListTile(
+                              subtitle: Text(data['Data']['Cost of cultivation'] ?? ""),
+                              title: Text(translations.text('output.o3')),
+                              trailing: Image.asset("assets/cul.png")
+                          ),
+                        ),
+                        Card(
+                          //                           <-- Card widget
+                          child: ListTile(
+                              subtitle: Text(data['Data']['Expected revenues'] ?? ""),
+                              title: Text(translations.text('output.o4')),
+                              trailing: Image.asset("assets/revenue.png")
+                          ),
+                        ),
+                        Card(
+                          //                           <-- Card widget
+                          child: ListTile(
+                              subtitle:
+                              Text(data['Data']['Quantity of seeds per hectare'] ?? ""),
+                              title: Text(translations.text('output.o5')),
+                              trailing: Image.asset("assets/seed.png")
+                          ),
+                        ),
+                        Card(
+                          //                           <-- Card widget
+                          child: ListTile(
+                              subtitle: Text(data['Data']['Duration of cultivation'] ?? ""),
+                              title: Text(translations.text('output.o6')),
+                              trailing: Image.asset("assets/time.png")
+                          ),
+                        ),
+                        Card(
+                          //                           <-- Card widget
+                          child: ListTile(
+                              subtitle: Text(data['Data']['Demand of crop'] ?? ""),
+                              title: Text(translations.text('output.o7')),
+                              trailing: Image.asset("assets/demand.png")
+                          ),
+                        ),
+                        Card(
+                          //                           <-- Card widget
+                          child: ListTile(
+                              subtitle: Text(data['Data']['Crops for mixed cropping'] ?? ""),
+                              title: Text(translations.text('output.o8')),
+                              trailing:Image.asset("assets/mix.png")
+                          ),
+                        ),
+                      ],
                     ),
-                    trailing: Image.asset("assets/fertilizer.png")
-                  ),
-                ),
-                Card(
-                  //                           <-- Card widget
-                  child: ListTile(
-                    subtitle: Text(js['Data']['Cost of cultivation'] ?? ""),
-                    title: Text(translations.text('output.o3')),
-                    trailing: Image.asset("assets/cul.png")
-                  ),
-                ),
-                Card(
-                  //                           <-- Card widget
-                  child: ListTile(
-                    subtitle: Text(js['Data']['Expected revenues'] ?? ""),
-                    title: Text(translations.text('output.o4')),
-                    trailing: Image.asset("assets/revenue.png")
-                  ),
-                ),
-                Card(
-                  //                           <-- Card widget
-                  child: ListTile(
-                    subtitle:
-                        Text(js['Data']['Quantity of seeds per hectare'] ?? ""),
-                    title: Text(translations.text('output.o5')),
-                    trailing: Image.asset("assets/seed.png")
-                  ),
-                ),
-                Card(
-                  //                           <-- Card widget
-                  child: ListTile(
-                    subtitle: Text(js['Data']['Duration of cultivation'] ?? ""),
-                    title: Text(translations.text('output.o6')),
-                    trailing: Image.asset("assets/time.png")
-                  ),
-                ),
-                Card(
-                  //                           <-- Card widget
-                  child: ListTile(
-                    subtitle: Text(js['Data']['Demand of crop'] ?? ""),
-                    title: Text(translations.text('output.o7')),
-                    trailing: Image.asset("assets/demand.png")
-                  ),
-                ),
-                Card(
-                  //                           <-- Card widget
-                  child: ListTile(
-                    subtitle: Text(js['Data']['Crops for mixed cropping'] ?? ""),
-                    title: Text(translations.text('output.o8')),
-                    trailing:Image.asset("assets/mix.png")
-                  ),
-                ),
-              ],
-            ),
-          );
+                  );
+                },
+              ),
+            );
+          }
+          else {
+            return  NetworkGiffyDialog(
+              image: Image.network(
+                "https://media.giphy.com/media/l4pLY0zySvluEvr0c/giphy.gif",
+                fit: BoxFit.cover,
+              ),
+              entryAnimation: EntryAnimation.TOP_LEFT,
+              title: Text(
+                translations.text('login.er'),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 22.0, fontWeight: FontWeight.w600),
+              ),
+              description: Text(
+                translations.text('login.des'),
+                textAlign: TextAlign.center,
+              ),
+              onlyOkButton: true,
+              onOkButtonPressed: (){
+                Navigator.pop(context);
+              },
+            );
+          }
         },
-    ),
+
       );
   }
 }

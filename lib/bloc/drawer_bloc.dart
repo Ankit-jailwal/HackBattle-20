@@ -7,7 +7,7 @@ import 'package:ieeecrop/pages/Maati_Cam.dart';
 import 'package:ieeecrop/pages/Main_menu.dart';
 import 'package:ieeecrop/Functions_and_route.dart';
 
-enum DrawerEvents { ProfileEvent, news, Createevent,menu,history,output,about}
+enum DrawerEvents { ProfileEvent, news, cam,menu,history,output,about}
 
 abstract class DrawerStates {}
 
@@ -31,7 +31,7 @@ class DrawerBloc extends Bloc<DrawerEvents, DrawerStates> {
       case DrawerEvents.output:
         yield output(null);
         break;
-      case DrawerEvents.Createevent:
+      case DrawerEvents.cam:
         yield maaticam();
         break;
       case DrawerEvents.history:

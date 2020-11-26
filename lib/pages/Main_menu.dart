@@ -81,7 +81,7 @@ class Home extends StatelessWidget {
                 print("tapped");
                 if(data.page=="main") {
                   BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
-                      .Createevent);
+                      .cam);
                 }
                 else if(data.page=="call")
                   {
