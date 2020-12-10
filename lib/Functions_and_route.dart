@@ -209,11 +209,14 @@ Future crop_api_call(String base64) async{
   final String url="http://23.101.21.160:5000";
   var position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.best);
-  String pos = "22.494633964959373,70.39749973481656";
+  String pos = (position.latitude).toString() +
+      "," +
+      (position.longitude).toString();
   var res = await weatherApiProvider.fetchWeather1(
-      22.494633964959373,70.39749973481656);
+      position.longitude,position.longitude);
 
    print(res);
+
    var body = jsonDecode(res);
    temp = (body['main']['temp']).toString();
   String date = (DateTime.now()).toString();
