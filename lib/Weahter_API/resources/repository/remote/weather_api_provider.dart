@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:ieeecrop/Weahter_API/models/internal/application_error.dart';
 import 'package:ieeecrop/Weahter_API/models/remote/weather_forecast_list_response.dart';
@@ -44,18 +46,26 @@ class WeatherApiProvider {
   }
   Future fetchWeather1(
       double latitude, double longitude) async {
+    print("1");
     try {
       Uri uri = buildUri(_apiWeatherEndpoint, latitude, longitude);
+      print("1");
       http.Response response = await http.get(uri.toString());
+      print("2");
+      print(response.body);
+      print(response.statusCode);
+      var res = jsonDecode(response.body);
       if (response.statusCode == 200) {
+        print("if");
          return response.body;
-      } else {
+      }
+      else {
+        print("else");
         return WeatherResponse.withErrorCode(ApplicationError.apiError);
       }
     } catch (exc, stacktrace) {
       _logger.log(Level.INFO,
           "Exception occured: $exc stack trace: ${stacktrace.toString()}");
-
       return WeatherResponse.withErrorCode(ApplicationError.connectionError);
     }
   }

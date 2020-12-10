@@ -205,17 +205,17 @@ get_lang(String lang){
 }
 
 Future crop_api_call(String base64) async{
-  final String url="http://20.185.199.129:5000";
+
+  final String url="http://23.101.21.160:5000";
   var position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.best);
-  String pos = (position.latitude).toString() +
-      "," +
-      (position.longitude).toString();
+  String pos = "22.494633964959373,70.39749973481656";
   var res = await weatherApiProvider.fetchWeather1(
-      position.longitude,position.longitude);
-  print(res);
-  var body = jsonDecode(res);
-  temp = (body['main']['temp']).toString();
+      22.494633964959373,70.39749973481656);
+
+   print(res);
+   var body = jsonDecode(res);
+   temp = (body['main']['temp']).toString();
   String date = (DateTime.now()).toString();
   Map<String, String>data= {
     "base64":base64,

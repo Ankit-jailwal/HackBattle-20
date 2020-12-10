@@ -6,6 +6,7 @@ import 'package:ieeecrop/Language/translation/global_translation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ieeecrop/bloc/drawer_bloc.dart';
 import 'package:ieeecrop/Functions_and_route.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 
 class maaticam extends StatefulWidget with DrawerStates {
@@ -48,7 +49,7 @@ class _maaticamState extends State<maaticam> {
                   FlatButton(
                     onPressed: get_image,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                       child: _image == null
                           ? Image.asset(
                               'assets/images/cam.jpg',
@@ -57,11 +58,9 @@ class _maaticamState extends State<maaticam> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
-                  SizedBox(
-                    height: 30,
-                  ),
+
                   Container(
                     height: 50,
                     child: FlatButton(
@@ -86,7 +85,7 @@ class _maaticamState extends State<maaticam> {
                           child: Container(
                             alignment: Alignment.center,
                             constraints: BoxConstraints(
-                                minHeight: 50, maxWidth: double.infinity),
+                                minHeight: 50, maxWidth: 300),
                             child: Text(
                               translations.text('cam.b1'),
                               style: TextStyle(
@@ -112,6 +111,7 @@ class _maaticamState extends State<maaticam> {
 class output extends StatelessWidget with DrawerStates {
   var base64;
   output(this.base64);
+
   @override
   Widget build(BuildContext context) {
     return
@@ -127,6 +127,12 @@ class output extends StatelessWidget with DrawerStates {
           }
           else if (snapshot.data!= null) {
             final data=snapshot.data;
+            YoutubePlayerController _controller = YoutubePlayerController(
+              initialVideoId: YoutubePlayer.convertUrlToId(data['Data']['URL']),
+              flags: YoutubePlayerFlags(
+                autoPlay: true,
+              ),
+            );
             return Scaffold(
               appBar: AppBar(
                 title: Text(translations.text('output.head')),
@@ -138,6 +144,19 @@ class output extends StatelessWidget with DrawerStates {
                     padding: EdgeInsets.only(left: 10, right: 10),
                     child: Column(
                       children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 5,left: 5,top: 7,bottom: 7),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: YoutubePlayer(
+                           controller: _controller,
+                            progressColors: ProgressBarColors(
+                              playedColor: Colors.amber,
+                              handleColor: Colors.amberAccent,
+                            ),
+                          ),
+                        ),
+                      ),
                         Card(
                           //                           <-- Card widget
                           child: ListTile(
