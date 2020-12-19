@@ -2,7 +2,6 @@ import 'package:ieeecrop/Weahter_API/models/internal/chart_data.dart';
 import 'package:ieeecrop/Weahter_API/models/remote/city.dart';
 import 'package:ieeecrop/Weahter_API/models/remote/system.dart';
 import 'package:ieeecrop/Weahter_API/models/remote/weather_forecast_response.dart';
-import 'package:ieeecrop/Weahter_API/resources/application_localization.dart';
 import 'package:ieeecrop/Weahter_API/resources/weather_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -142,7 +141,7 @@ class WeatherForecastHolder {
     if (city != null && city.name != null && city.name.length > 0) {
       return city.name;
     } else {
-      return ApplicationLocalization.of(context).getText("your_location");
+      return "Location not found!";
     }
   }
 

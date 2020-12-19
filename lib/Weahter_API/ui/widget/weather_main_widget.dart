@@ -93,11 +93,11 @@ class WeatherMainWidgetState extends State<WeatherMainWidget> {
                   Text(snapshot.data.name,
                       key: Key("weather_main_widget_city_name"),
                       textDirection: TextDirection.ltr,
-                      style: Theme.of(context).textTheme.title),
+                      style: TextStyle(fontSize: 35, color: Colors.white)),
                   Text(_getCurrentDateFormatted(),
                       key: Key("weather_main_widget_date"),
                       textDirection: TextDirection.ltr,
-                      style: Theme.of(context).textTheme.subtitle),
+                      style: TextStyle(fontSize: 20, color: Colors.white)),
                   SizedBox(
                       height: Dimensions.weatherMainWidgetSwiperHeight,
                       child: Swiper(

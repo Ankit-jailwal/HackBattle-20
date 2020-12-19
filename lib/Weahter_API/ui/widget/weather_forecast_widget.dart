@@ -57,11 +57,11 @@ class WeatherForecastWidget extends StatelessWidget {
           Text(holder.getLocationName(context),
               textDirection: TextDirection.ltr,
               key: Key("weather_forecast_location_name"),
-              style: Theme.of(context).textTheme.title),
+              style: TextStyle(fontSize: 35, color: Colors.white)),
           Text(holder.dateFullFormatted,
               textDirection: TextDirection.ltr,
               key: Key("weather_forecast_date_formatted"),
-              style: Theme.of(context).textTheme.subtitle),
+              style: TextStyle(fontSize: 20, color: Colors.white)),
           WidgetHelper.buildPadding(top: 20),
           SizedBox(
               height: 450,

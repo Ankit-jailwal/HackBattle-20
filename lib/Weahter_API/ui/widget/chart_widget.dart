@@ -1,7 +1,6 @@
 import 'package:ieeecrop/Weahter_API/models/internal/chart_data.dart';
 import 'package:ieeecrop/Weahter_API/models/internal/chart_line.dart';
 import 'package:ieeecrop/Weahter_API/models/internal/point.dart';
-import 'package:ieeecrop/Weahter_API/resources/application_localization.dart';
 import 'package:ieeecrop/Weahter_API/ui/screen/base/animated_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -59,9 +58,9 @@ class _ChartWidgetState extends AnimatedState<ChartWidget>{
     return Center(
         key: Key("chart_widget_unavailable"),
         child: Text(
-            ApplicationLocalization.of(context).getText("chart_unavailable"),
+            "Chart Unavailable!",
             textDirection: TextDirection.ltr,
-            style: Theme.of(context).textTheme.body1));
+            style: TextStyle(fontSize: 15, color: Colors.white)));
   }
 
   @override

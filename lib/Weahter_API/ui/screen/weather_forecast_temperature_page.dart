@@ -2,7 +2,6 @@ import 'package:ieeecrop/Weahter_API/blocs/application_bloc.dart';
 import 'package:ieeecrop/Weahter_API/models/internal/chart_data.dart';
 import 'package:ieeecrop/Weahter_API/models/internal/point.dart';
 import 'package:ieeecrop/Weahter_API/models/internal/weather_forecast_holder.dart';
-import 'package:ieeecrop/Weahter_API/resources/application_localization.dart';
 import 'package:ieeecrop/Weahter_API/resources/config/assets.dart';
 import 'package:ieeecrop/Weahter_API/resources/weather_helper.dart';
 import 'package:ieeecrop/Weahter_API/ui/screen/base/weather_forecast_base_page.dart';
@@ -73,21 +72,21 @@ class WeatherForecastTemperaturePage extends WeatherForecastBasePage {
         key: Key("weather_forecast_temperature_page_subtitle"),
         textDirection: TextDirection.ltr,
         text: TextSpan(children: [
-          TextSpan(text: 'min ', style: Theme.of(context).textTheme.body2),
+          TextSpan(text: 'min: ', style: TextStyle(fontSize: 12, color: Colors.white)),
           TextSpan(
               text:
                   "${WeatherHelper.formatTemperature(temperature: minTemperature, positions: 1, round: false, metricUnits: applicationBloc.isMetricUnits())}",
-              style: Theme.of(context).textTheme.subtitle),
-          TextSpan(text: '   max ', style: Theme.of(context).textTheme.body2),
+              style: TextStyle(fontSize: 20, color: Colors.white)),
+          TextSpan(text: '   max: ', style: TextStyle(fontSize: 12, color: Colors.white)),
           TextSpan(
               text:
                   "${WeatherHelper.formatTemperature(temperature: maxTemperature, positions: 1, round: false, metricUnits: applicationBloc.isMetricUnits())}",
-              style: Theme.of(context).textTheme.subtitle)
+              style: TextStyle(fontSize: 20, color: Colors.white))
         ]));
   }
 
   @override
   String getTitleText(BuildContext context) {
-    return ApplicationLocalization.of(context).getText("temperature");
+    return 'Temperature';
   }
 }

@@ -237,3 +237,83 @@ Future crop_api_call(String base64) async{
     return null;
 }
 
+Future getseed() async{
+  final String url="http://13.76.26.146:3000/seed";
+
+  final response= await http.get(url
+  );
+  var data=jsonDecode(response.body);
+  if(response.statusCode==200)
+    return data;
+  else
+    return null;
+}
+Future getfertilizer() async{
+  final String url="http://13.76.26.146:3000/fertilizers";
+
+  final response= await http.get(url
+  );
+  var data=jsonDecode(response.body);
+  if(response.statusCode==200)
+    return data;
+  else
+    return null;
+}
+Future gettools() async{
+  final String url="http://13.76.26.146:3000/tools";
+
+  final response= await http.get(url
+  );
+  var data=jsonDecode(response.body);
+  if(response.statusCode==200)
+    return data;
+  else
+    return null;
+}
+Future getpesticide() async{
+  final String url="http://13.76.26.146:3000/pesticides";
+
+  final response= await http.get(url
+  );
+  var data=jsonDecode(response.body);
+  if(response.statusCode==200)
+    return data;
+  else
+    return null;
+}
+
+Future Sell(String base64,String name,String amount,String quantity,String des) async{
+
+  final String url="http://13.76.26.146:3000/sell";
+  Map<String, String>data= {
+    "base64":base64,
+    "ID":"1.png",
+    "product_name":name,
+    "description":des,
+    "quantity": quantity,
+    "amount": amount
+  };
+  final response= await http.post(url, headers: {"Content-Type": "application/json"},body:json.encode(data)
+  );
+  print(response.statusCode);
+  print(response.body);
+  return response.statusCode;
+}
+Future Rent(String base64,String name,String amount,String quantity,String des) async{
+
+  final String url="http://13.76.26.146:3000/rent";
+  Map<String, String>data= {
+    "base64":base64,
+    "ID":"1.png",
+    "product_name":name,
+    "description":des,
+    "quantity": quantity,
+    "amount": amount
+  };
+
+  final response= await http.post(url, headers: {"Content-Type": "application/json"},body:json.encode(data)
+  );
+  print(response.statusCode);
+  print(response.body);
+  return response.statusCode;
+}

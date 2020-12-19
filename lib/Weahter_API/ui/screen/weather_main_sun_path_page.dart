@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:ieeecrop/Weahter_API/models/remote/system.dart';
-import 'package:ieeecrop/Weahter_API/resources/application_localization.dart';
+
 import 'package:ieeecrop/Weahter_API/resources/weather_helper.dart';
 import 'package:ieeecrop/Weahter_API/ui/widget/animated_text_widget.dart';
 import 'package:ieeecrop/Weahter_API/ui/widget/sun_path_widget.dart';
@@ -65,40 +65,40 @@ class _WeatherMainSunPathPageState extends State<WeatherMainSunPathPage> {
     int mode = WeatherHelper.getDayModeFromSunriseSunset(_sunrise, _sunset);
     if (mode == 0) {
       widgets.add(AnimatedTextWidget(
-          textBefore: ApplicationLocalization.of(context).getText("day") + ':',
+          textBefore: 'Day' + ':',
           maxValue: _getPathPercentage(),
           key: Key("weather_main_sun_path_percentage")));
       widgets.add(WidgetHelper.buildPadding(top: 10));
       widgets.add(Text(
-          "${ApplicationLocalization.of(context).getText("sunset_in")}: ${_getTimeUntilSunset()}",
+          "Sunset in ${_getTimeUntilSunset()}",
           key: Key("weather_main_sun_path_countdown"),
           textDirection: TextDirection.ltr,
-          style: Theme.of(context).textTheme.subtitle));
+          style: TextStyle(fontSize: 20, color: Colors.white)));
     } else {
       widgets.add(AnimatedTextWidget(
           textBefore:
-              ApplicationLocalization.of(context).getText("night") + ':',
+              'Night' + ':',
           maxValue: _getPathPercentage(),
           key: Key("weather_main_sun_path_percentage")));
       widgets.add(WidgetHelper.buildPadding(top: 10));
       widgets.add(Text(
-          "${ApplicationLocalization.of(context).getText("sunrise_in")}: ${_getTimeUntilSunrise()}",
+          "Sunset in: ${_getTimeUntilSunrise()}",
           key: Key("weather_main_sun_path_countdown"),
           textDirection: TextDirection.ltr,
-          style: Theme.of(context).textTheme.subtitle));
+          style: TextStyle(fontSize: 20, color: Colors.white)));
     }
 
     widgets.add(WidgetHelper.buildPadding(top: 30));
     widgets.add(Text(
-        "${ApplicationLocalization.of(context).getText("sunrise")}: ${_getSunriseTime()}",
+        "Sunrise: ${_getSunriseTime()}",
         key: Key("weather_main_sun_path_sunrise"),
         textDirection: TextDirection.ltr,
-        style: Theme.of(context).textTheme.body1));
+        style: TextStyle(fontSize: 15, color: Colors.white)));
     widgets.add(Text(
-        "${ApplicationLocalization.of(context).getText("sunset")}: ${_getSunsetTime()}",
+        "Sunset: ${_getSunsetTime()}",
         key: Key("weather_main_sun_path_sunset"),
         textDirection: TextDirection.ltr,
-        style: Theme.of(context).textTheme.body1));
+        style: TextStyle(fontSize: 15, color: Colors.white)));
 
     return widgets;
   }

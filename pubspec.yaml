@@ -47,6 +47,8 @@ dependencies:
   dio: ^3.0.10
   pretty_dio_logger: ^1.1.1
   giffy_dialog: ^1.8.0
+  razorpay_flutter: ^1.2.1
+  toast: ^0.1.5
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -1,6 +1,5 @@
 import 'package:ieeecrop/Weahter_API/models/internal/overflow_menu_element.dart';
 import 'package:ieeecrop/Weahter_API/models/internal/weather_forecast_holder.dart';
-import 'package:ieeecrop/Weahter_API/resources/application_localization.dart';
 import 'package:ieeecrop/Weahter_API/resources/config/application_colors.dart';
 import 'package:ieeecrop/Weahter_API/ui/widget/weather_forecast_widget.dart';
 import 'package:ieeecrop/Weahter_API/ui/widget/widget_helper.dart';

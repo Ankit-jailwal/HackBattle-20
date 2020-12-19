@@ -1,5 +1,4 @@
 import 'package:ieeecrop/Weahter_API/models/internal/application_error.dart';
-import 'package:ieeecrop/Weahter_API/resources/application_localization.dart';
 import 'package:ieeecrop/Weahter_API/resources/config/application_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -44,15 +43,14 @@ class WidgetHelper {
       VoidCallback voidCallback,
       bool withRetryButton}) {
     String errorText = "";
-    ApplicationLocalization localization = ApplicationLocalization.of(context);
     if (applicationError == ApplicationError.locationNotSelectedError) {
-      errorText = localization.getText("error_location_not_selected");
+      errorText = "Error location not found!";
     } else if (applicationError == ApplicationError.connectionError) {
-      errorText = localization.getText("error_server_connection");
+      errorText = "Please check your internet connection!";
     } else if (applicationError == ApplicationError.apiError) {
-      errorText = localization.getText("error_api");
+      errorText = "Internal server error!";
     } else {
-      errorText = localization.getText("error_unknown");
+      errorText = "Something went wrong!";
     }
     List<Widget> widgets = new List();
     widgets.add(Text(
@@ -62,8 +60,8 @@ class WidgetHelper {
     ));
     if (withRetryButton) {
       widgets.add(FlatButton(
-        child: Text(ApplicationLocalization.of(context).getText("retry"),
-            style: Theme.of(context).textTheme.subtitle),
+        child: Text("Retry!",
+            style: TextStyle(fontSize: 20, color: Colors.white)),
         onPressed: voidCallback,
       ));
     }

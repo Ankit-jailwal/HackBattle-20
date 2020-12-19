@@ -1,7 +1,6 @@
 import 'package:ieeecrop/Weahter_API/blocs/application_bloc.dart';
 import 'package:ieeecrop/Weahter_API/models/remote/overall_weather_data.dart';
 import 'package:ieeecrop/Weahter_API/models/remote/weather_response.dart';
-import 'package:ieeecrop/Weahter_API/resources/application_localization.dart';
 import 'package:ieeecrop/Weahter_API/resources/weather_helper.dart';
 import 'package:ieeecrop/Weahter_API/ui/screen/base/animated_state.dart';
 import 'package:ieeecrop/Weahter_API/ui/widget/weather_forecast_thumbnail_list_widget.dart';
@@ -70,12 +69,12 @@ class WeatherCurrentWidgetState extends AnimatedState<WeatherCurrentWidget> {
                         metricUnits: applicationBloc.isMetricUnits()),
                     key: Key("weather_current_widget_temperature"),
                     textDirection: TextDirection.ltr,
-                    style: Theme.of(context).textTheme.headline),
+                    style: TextStyle(fontSize: 60.0, color: Colors.white)),
                 WidgetHelper.buildPadding(top: 30),
                 Text(_getMaxMinTemperatureRow(response),
                     key: Key("weather_current_widget_min_max_temperature"),
                     textDirection: TextDirection.ltr,
-                    style: Theme.of(context).textTheme.subtitle),
+                    style: TextStyle(fontSize: 20, color: Colors.white)),
                 WidgetHelper.buildPadding(top: 5),
                _getPressureAndHumidityRow(response),
                 WidgetHelper.buildPadding(top: 20),
@@ -100,26 +99,25 @@ class WeatherCurrentWidgetState extends AnimatedState<WeatherCurrentWidget> {
   }
 
   Widget _getPressureAndHumidityRow(WeatherResponse weatherResponse) {
-    var applicationLocalization = ApplicationLocalization.of(context);
     return RichText(
         textDirection: TextDirection.ltr,
         key: Key("weather_current_widget_pressure_humidity"),
         text: TextSpan(children: [
           TextSpan(
-              text: "${applicationLocalization.getText("pressure")}: ",
-              style: Theme.of(context).textTheme.body2),
+              text: "Pressure: ",
+              style: TextStyle(fontSize: 12, color: Colors.white)),
           TextSpan(
               text: WeatherHelper.formatPressure(weatherResponse.mainWeatherData.pressure),
-              style: Theme.of(context).textTheme.subtitle),
+              style: TextStyle(fontSize: 20, color: Colors.white)),
           TextSpan(
             text: "  ",
           ),
           TextSpan(
-              text: "${applicationLocalization.getText("humidity")}: ",
-              style: Theme.of(context).textTheme.body2),
+              text: "Humidity: ",
+              style: TextStyle(fontSize: 12, color: Colors.white)),
           TextSpan(
               text: WeatherHelper.formatHumidity(weatherResponse.mainWeatherData.humidity),
-              style: Theme.of(context).textTheme.subtitle)
+              style: TextStyle(fontSize: 20, color: Colors.white))
         ]));
   }
 

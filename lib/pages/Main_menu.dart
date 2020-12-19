@@ -4,9 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ieeecrop/Language/translation/global_translation.dart';
-import 'package:ieeecrop/Navigate_to_weather_api.dart';
+import 'package:ieeecrop/Weahter_API/ui/screen/weather_main_screen.dart';
 import 'package:ieeecrop/bloc/drawer_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:ieeecrop/pages/Nav_page.dart';
 
 class Main_menu extends StatefulWidget with DrawerStates{
   @override
@@ -40,24 +41,30 @@ class Home extends StatelessWidget {
     page:"news",
   );
   Items item3 = new Items(
+    title: "Maati Shop",
+    subtitle: "",
+    img: "assets/shop.png",
+    page:"shop",
+  );
+  Items item4 = new Items(
     title: translations.text('menu.b3'),
     subtitle: "",
     img: "assets/images/analysis.png",
     page:"analysis",
   );
-  Items item4 = new Items(
+  Items item5 = new Items(
     title: translations.text('menu.b4'),
     subtitle: "",
     img: "assets/images/phone.png",
     page:"call",
   );
-  Items item5 = new Items(
+  Items item6 = new Items(
     title: translations.text('menu.b5'),
     subtitle: "",
     img: "assets/images/history.png",
     page:"history",
   );
-  Items item6 = new Items(
+  Items item7 = new Items(
     title: translations.text('menu.b6'),
     subtitle: "",
     img: "assets/images/contact.png",
@@ -66,7 +73,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Items> myList = [item1, item2, item3, item4, item5, item6];
+    List<Items> myList = [item1, item2, item3, item4, item5, item6,item7];
     return Flexible(
       child: GridView.count(
           childAspectRatio: 1.0,
@@ -89,8 +96,15 @@ class Home extends StatelessWidget {
                   }
                 else if(data.page=="analysis")
                   {
-                    runApp(Weather_app());
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => WeatherMainScreen()),
+                    );
                   }
+                else if(data.page=="shop") {
+                  BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                      .nav);
+                }
                 else if(data.page=="news") {
                   BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
                       .news);
