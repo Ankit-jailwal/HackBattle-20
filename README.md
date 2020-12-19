@@ -23,13 +23,10 @@ The aim is to design an AI based crop recommendation application which can recom
 Multiple datasets have been used for training and obtaining relevant output purposes. All the datasets used are custom datsets; constructed and structured according to the algorithm requirements and proposed test cases. Following is the list and types of the datasets used-
 
 1.) **Soils.zip(Soil Image Dataset)** - Contains around 600-700 images of different soil types which are used for agriculture and generally found in Indian-Subcontinent.
-    https://github.com/Rashi-Srivastava/Maati-/blob/main/Datasets/Soils.zip
     
 2.) **Cat_crop.csv** - The mentioned CSV file contains data related to various parameters which have been taken into account while training the Crop recommendation System Machine Learning Model.
-    https://github.com/Rashi-Srivastava/Maati-/blob/main/Datasets/Cat_Crop.csv
     
 3.) **Prediction.csv, Prediction.json** - This dataset contains additional information about the crops used in training of the model and are fetched in real time after crop prediction to give the user a better idea about the requirements of crops and their needs. 
-    https://github.com/Rashi-Srivastava/Maati-/blob/main/Datasets/Prediction.json
     
 #### Working of Maati App - 
 - The app starts after an easy user login using mobile number but for the prototype the mobile number feature hasn't been implemented completely and the app is currently working on a dummy user name and phone number. 
@@ -44,14 +41,6 @@ Multiple datasets have been used for training and obtaining relevant output purp
 
 - After crop prediction the relevant details related to the crops will be fetched and shown as the output to the users.
 - Users can also access other features of the app such as: Kisan Call Centre, Maati News for agriculture news and happenings, Maati analysis for weather updates, History of previous recommendations etc. 
-
-All the files related to frontend can be found here: https://github.com/Rashi-Srivastava/Maati-/tree/frontend
-
-**Screenshots and app related images can be found here: https://github.com/Rashi-Srivastava/Maati-/tree/main/Images**
-
-**All the videos can be found here: https://github.com/Rashi-Srivastava/Maati-/tree/main/Video**
-
-#### The app can be accessed by downloading this file: https://github.com/Rashi-Srivastava/Maati-/tree/main/App
 
 ### UPDATE-
 #### Multi Language support is available for 10+ languages in this prototype.
