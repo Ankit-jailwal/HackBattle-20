@@ -52,19 +52,16 @@ Multiple datasets have been used for training and obtaining relevant output purp
 
 ## Features of the App
 
-### Maati app-:
-
-### login portal-
+### Login portal-
 Enter your username and phone no. to register.
 
-
-### landing Page-:
+### Landing Page-
 As you enter your details ou will enter to the page which contains three sections buy, sell and rent.
 
-### Buy section -: 
+### Buy section - 
 In buy section you may buy all the things that a farmer needed.
  
-On clicking on buy section you land at a page which contains six section name as maati shop , maati news , maati analysis , kisan call center , history , contact us
+On clicking on buy section you land at a page which contains six section name as maati shop , maati news , maati analysis , kisan call center , history , contact us.
 
 ### Maati Shop -
 All the things needed by a farmer may be found here such as seeds , fertilizers , tools and pesticides.
@@ -81,27 +78,26 @@ Farmer can take the picture of soil through their camera and maati app will anal
 This will directly direct them to their call section to call with kisan seva kendra contact no.
 
 ### History - 
-History of what transcations made , purchased , sell and rent will kept here .
+History of what transcations made, purchased, sell and rent will kept here .
 
-
-### Sell -: 
-Enter the name of item you want to sell with description , quantity and amount .
+### Sell - 
+Enter the name of item you want to sell with description, quantity and amount .
 Capture its snap and sell now button will post it to the needed ones.
 
-### Rent -: 
-Enter the name of item you want to rent with description , quantity and amount .
+### Rent - 
+Enter the name of item you want to rent with description, quantity and amount .
 Capture its snap and rent now button will post it to the needed ones.
 
-### Setting logo : 
+### Setting logo -  
 It will direct you to a sidebar 
-contains all features such as maati shop , news etc.
+contains all features such as maati shop, news etc.
 
-### Language -: 
+### Language - 
 It will allow you to choose the diffrent languages.
 
-### Night Mode:- 
+### Night Mode - 
 For convenience we are providing night mode. 
 
-### Contact us :- 
-we giving our basic information at that page.
+### Contact us - 
+We giving our basic information at that page.
 
