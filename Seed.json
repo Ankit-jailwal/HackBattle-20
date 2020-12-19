@@ -1,0 +1,323 @@
+{"Data":[
+    {
+        "Seed ID": "10001",
+        "Seed Name": "Wheat ",
+        "Cost": "Rs 21",
+        "Image Code": "https://cdn.pixabay.com/photo/2011/08/17/12/52/wheat-8762_1280.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "10245",
+        "Seller name": "Jitendra Kumar",
+        "Seller Address": "\tAmbedkar Nagar, UP"
+    },
+    {
+        "Seed ID": "10002",
+        "Seed Name": "paddy",
+        "Cost": "Rs 25",
+        "Image Code": "https://cdn.pixabay.com/photo/2020/04/09/06/04/rice-5019854_1280.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "10542",
+        "Seller name": "Anuj Yadav",
+        "Seller Address": "Auriya, UP"
+    },
+    {
+        "Seed ID": "10003",
+        "Seed Name": "Bajra",
+        "Cost": "RS 25",
+        "Image Code": "https://cdn.pixabay.com/photo/2020/06/21/10/11/bajra-5324228_1280.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "10846",
+        "Seller name": "Ranu Devi",
+        "Seller Address": "Arni, Khair Tahsil, UP"
+    },
+    {
+        "Seed ID": "10004",
+        "Seed Name": "Jowar",
+        "Cost": "Rs 18",
+        "Image Code": "https://cdn.pixabay.com/photo/2014/02/26/13/20/sorghum-275258_1280.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "10426",
+        "Seller name": "Ram Kamal Devi",
+        "Seller Address": "Arrana, Khair Tahsil,UP"
+    },
+    {
+        "Seed ID": "10005",
+        "Seed Name": "Urad",
+        "Cost": "60",
+        "Image Code": "https://cdn.newsnationtv.com/resize/730_-/images/2020/01/20/uraddaal-77.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "11254",
+        "Seller name": "Sita Kumari",
+        "Seller Address": "Jahanabad , Bihar"
+    },
+    {
+        "Seed ID": "10006",
+        "Seed Name": "Clove",
+        "Cost": "600",
+        "Image Code": "https://5.imimg.com/data5/SELLER/Default/2020/10/MR/AH/KS/36509891/natural-clove-seeds-250x250.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "11586",
+        "Seller name": "Neraj Singh",
+        "Seller Address": "Samsara, Bihar"
+    },
+    {
+        "Seed ID": "10007",
+        "Seed Name": "Moong",
+        "Cost": "80",
+        "Image Code": "https://cdn.pixabay.com/photo/2013/07/25/12/04/mung-beans-166996_1280.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "11586",
+        "Seller name": "Gita Kumari",
+        "Seller Address": "Mirzapur, UP"
+    },
+    {
+        "Seed ID": "10008",
+        "Seed Name": "Banana",
+        "Cost": "198 - 100",
+        "Image Code": "https://images-na.ssl-images-amazon.com/images/I/51IDiX5APXL.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "12456",
+        "Seller name": "Kisan Yojana",
+        "Seller Address": "sadisopur, Bihar"
+    },
+    {
+        "Seed ID": "10009",
+        "Seed Name": "Sugarcane ",
+        "Cost": "3",
+        "Image Code": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR70K1CIuwo3ltAYtPw9ujxsx-Cqx8CmuL7KQ&usqp=CAU",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "12789",
+        "Seller name": "Aditya Singh",
+        "Seller Address": "Rachi , Jharkhand"
+    },
+    {
+        "Seed ID": "10010",
+        "Seed Name": "Tea",
+        "Cost": "30",
+        "Image Code": "https://images-na.ssl-images-amazon.com/images/I/21yKqhyAllL.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "12789",
+        "Seller name": "Rajat Singh",
+        "Seller Address": "Tilaya, Jharkhand"
+    },
+    {
+        "Seed ID": "10011",
+        "Seed Name": "Cofee",
+        "Cost": "600",
+        "Image Code": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "10564",
+        "Seller name": "Madhuri group",
+        "Seller Address": "Mumbai,Maharashtra"
+    },
+    {
+        "Seed ID": "10012",
+        "Seed Name": "Soyabeen",
+        "Cost": "37",
+        "Image Code": "https://5.imimg.com/data5/SL/GS/MY-41125371/soybean-dal-500x500.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "11475",
+        "Seller name": "Mauri Devi",
+        "Seller Address": "Samrara, Bihar"
+    },
+    {
+        "Seed ID": "10013",
+        "Seed Name": "Ragi",
+        "Cost": "500",
+        "Image Code": "https://images-na.ssl-images-amazon.com/images/I/519x0XR-nwL._SY450_.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "12456",
+        "Seller name": "Subhayu",
+        "Seller Address": "Bareliy, UP"
+    },
+    {
+        "Seed ID": "10014",
+        "Seed Name": "Turmeric",
+        "Cost": "200",
+        "Image Code": "https://4.imimg.com/data4/PA/KH/MY-5355375/turmeric-finger-250x250.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "12546",
+        "Seller name": "Shivanshi",
+        "Seller Address": "Agra,Bihar"
+    },
+    {
+        "Seed ID": "10015",
+        "Seed Name": "Black Pepper",
+        "Cost": "950",
+        "Image Code": "https://www.healthifyme.com/blog/wp-content/uploads/2020/08/Black-Pepper.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "19307",
+        "Seller name": "Somya",
+        "Seller Address": "Baksar,Bihar"
+    },
+    {
+        "Seed ID": "10016",
+        "Seed Name": "Sunhemp",
+        "Cost": "1500",
+        "Image Code": "https://www.dairyknowledge.in/sites/default/files/styles/medium_large/public/sun_heamp.jpg?itok=_zr7Naz0",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "15587",
+        "Seller name": "Mayank",
+        "Seller Address": "Bhagalpur,Bihar"
+    },
+    {
+        "Seed ID": "10017",
+        "Seed Name": "Cocoa",
+        "Cost": "17000",
+        "Image Code": "https://perfectdailygrind.com/wp-content/uploads/2020/04/cacao-bean-2522918_960_720-1.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "19773",
+        "Seller name": "Arjit Gaur ",
+        "Seller Address": "Bilaspur, UP"
+    },
+    {
+        "Seed ID": "10018",
+        "Seed Name": "millet",
+        "Cost": "5500",
+        "Image Code": "https://5.imimg.com/data5/LU/SS/MY-5477230/foxtail-millet-500x500.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "17789",
+        "Seller name": "Aniket Pundeer",
+        "Seller Address": "Kiccha, Uttarakhand"
+    },
+    {
+        "Seed ID": "10019",
+        "Seed Name": "Groundnut",
+        "Cost": "2300",
+        "Image Code": "https://5.imimg.com/data5/II/XE/MY-64098486/25kg-groundnut-seed-500x500.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "45881",
+        "Seller name": "Ankit Jain",
+        "Seller Address": "Tanakpur,Uttarakhand"
+    },
+    {
+        "Seed ID": "10020",
+        "Seed Name": "Garlic",
+        "Cost": "2400",
+        "Image Code": "https://static.onecms.io/wp-content/uploads/sites/24/2019/07/gettyimages-513038872-2000.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "76641",
+        "Seller name": "Kritika Singh",
+        "Seller Address": "Dhanbad, Jharkhand"
+    },
+    {
+        "Seed ID": "10021",
+        "Seed Name": "Jute seed",
+        "Cost": "1750",
+        "Image Code": "https://img3.exportersindia.com/product_images/bc-full/2019/5/6371668/jute-seed-1558152341-4912357.jpeg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "14587",
+        "Seller name": "Shilpi karmekar",
+        "Seller Address": "Lakhim sahay, UP"
+    },
+    {
+        "Seed ID": "10022",
+        "Seed Name": "Cardamon",
+        "Cost": "130",
+        "Image Code": "https://4.imimg.com/data4/AA/PC/ANDROID-50511288/product-500x500.jpeg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "14568",
+        "Seller name": "Ravi bisnoi",
+        "Seller Address": "Agra,UP"
+    },
+    {
+        "Seed ID": "10023",
+        "Seed Name": "Onion seed",
+        "Cost": "140",
+        "Image Code": "https://images-na.ssl-images-amazon.com/images/I/71W5n3XWqaL._SL1500_.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "14567",
+        "Seller name": "Umeed paul",
+        "Seller Address": "Kakolat,Bihar"
+    },
+    {
+        "Seed ID": "10024",
+        "Seed Name": "Flax",
+        "Cost": "1890",
+        "Image Code": "https://5.imimg.com/data5/HP/VA/MY-5665983/flax-seed-500x500.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "18945",
+        "Seller name": "Ankit yadav",
+        "Seller Address": "Kashi"
+    },
+    {
+        "Seed ID": "10025",
+        "Seed Name": "Maize",
+        "Cost": "1899",
+        "Image Code": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ab_food_06.jpg/240px-Ab_food_06.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "15873",
+        "Seller name": "kalapana thakur",
+        "Seller Address": "Blaspur, Bihar"
+    },
+    {
+        "Seed ID": "10026",
+        "Seed Name": "Dry Ginger",
+        "Cost": "765",
+        "Image Code": "https://tiimg.tistatic.com/fp/1/004/250/sonth-dried-ginger--812.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "25461",
+        "Seller name": "Akansha sharma",
+        "Seller Address": "New Delhi"
+    },
+    {
+        "Seed ID": "10027",
+        "Seed Name": "Horse Gram",
+        "Cost": "235",
+        "Image Code": "https://5.imimg.com/data5/KV/YD/MY-61856690/horse-gram-500x500.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "25981",
+        "Seller name": "Jigayasa jaiswal",
+        "Seller Address": "Char gali,Hyderabad"
+    },
+    {
+        "Seed ID": "10028",
+        "Seed Name": "Cashewnut",
+        "Cost": "1000",
+        "Image Code": "https://images-na.ssl-images-amazon.com/images/I/71l7n-dQpBL._SL1500_.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "27841",
+        "Seller name": "Renu bansal",
+        "Seller Address": "Mirzapur, UP"
+    },
+    {
+        "Seed ID": "10029",
+        "Seed Name": "Sunflower",
+        "Cost": "90",
+        "Image Code": "https://5.imimg.com/data5/GJ/OB/MC/SELLER-3698782/sunflower-seed-500x500.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "25641",
+        "Seller name": "kalpit birbal",
+        "Seller Address": "Asansol,West Begal"
+    },
+    {
+        "Seed ID": "10030",
+        "Seed Name": "Chilles",
+        "Cost": "255",
+        "Image Code": "https://4.imimg.com/data4/QK/GV/MY-15581195/chilli-seeds-500x500.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "29871",
+        "Seller name": "Aman bansal",
+        "Seller Address": "Banglore,UP"
+    },
+    {
+        "Seed ID": "10031",
+        "Seed Name": "Tomato",
+        "Cost": "250",
+        "Image Code": "https://5.imimg.com/data5/CL/WI/MY-11397962/tomato-seed-500x500.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "21345",
+        "Seller name": "Kalpana kumari",
+        "Seller Address": "Jaipur,Rajasthan"
+    },
+    {
+        "Seed ID": "10032",
+        "Seed Name": "Castor Seed",
+        "Cost": "1900",
+        "Image Code": "https://images-na.ssl-images-amazon.com/images/I/61QhNo0adkL._SX466_.jpg",
+        "Desciption": "Usage/Application:  Agriculture   , Type: Natural",
+        "Seller Id": "26598",
+        "Seller name": "Divya mehta",
+        "Seller Address": "Nainital, Uttarakhand"
+    }
+    
+]}

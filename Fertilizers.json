@@ -1,0 +1,202 @@
+{"Data" : [
+        {
+        "Fertilizer ID": "2001",
+        "Fertilizer Name": "Ammonium Sulphate",
+        "Cost": "75",
+        "Image Code": "https://www.akashpurochem.net/img/ammonium-sulphate.jpg",
+        "Desciption": "STRAIGHT NITROGENOUS FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Lakshami Devi",
+        "Seller Address": "Bhurarani, Uttrakhand"
+    },
+    {
+        "Fertilizer ID": "2002",
+        "Fertilizer Name": "Urea (46% N) (While free flowing)",
+        "Cost": "54",
+        "Image Code": "https://in.all.biz/img/in/catalog/283642.jpeg",
+        "Desciption": "STRAIGHT NITROGENOUS FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Lal Bahadur",
+        "Seller Address": "Sector-46,Delhi"
+    },
+    {
+        "Fertilizer ID": "2003",
+        "Fertilizer Name": "Urea (coated) (45% N) (While free flowing)",
+        "Cost": "65",
+        "Image Code": "https://image.ec21.com/image/nick0611/oimg_GC00762354_CA00762588/Polymer-Coated-Urea-43-0-0.jpg",
+        "Desciption": "STRAIGHT NITROGENOUS FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Raunak Birla",
+        "Seller Address": "Delhi"
+    },
+    {
+        "Fertilizer ID": "2004",
+        "Fertilizer Name": "Ammonium Chloride",
+        "Cost": "80",
+        "Image Code": "https://4.imimg.com/data4/IT/FT/MY-23516670/ammonium-chloride-250x250.jpg",
+        "Desciption": "STRAIGHT NITROGENOUS FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Saumya Shree",
+        "Seller Address": "Kirathpur,Ambala"
+    },
+    {
+        "Fertilizer ID": "2005",
+        "Fertilizer Name": "Calcium Ammonium Nitrate (25% N)",
+        "Cost": "54",
+        "Image Code": "https://img.tradewheel.com/uploads/images/products/1/5/calcium-ammonium-nitrate-25-n-calcium-ammonium-nitrate-26-n-fertilizers1-0095312001554263462.jpg",
+        "Desciption": "STRAIGHT NITROGENOUS FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Mehul sethi",
+        "Seller Address": "Sidkul Plot no.78"
+    },
+    {
+        "Fertilizer ID": "2006",
+        "Fertilizer Name": "Calcium Ammonium Nitrate (26% N)",
+        "Cost": "95",
+        "Image Code": "https://image.made-in-china.com/2f0j00uKJQbUMYZkcv/Can26-Fertilizer-Calcium-Ammonium-Nitrate.jpg",
+        "Desciption": "STRAIGHT NITROGENOUS FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Anmol Kalra",
+        "Seller Address": "Patna "
+    },
+    {
+        "Fertilizer ID": "2007",
+        "Fertilizer Name": "Anhydrous Ammonia",
+        "Cost": "105",
+        "Image Code": "https://5.imimg.com/data5/FX/KX/HI/SELLER-4167684/anhydrous-ammonia-gas-500x500.jpg",
+        "Desciption": "STRAIGHT NITROGENOUS FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Nidhi Singh",
+        "Seller Address": "Haldwani"
+    },
+    {
+        "Fertilizer ID": "2008",
+        "Fertilizer Name": "Urea Super Granulated",
+        "Cost": "65",
+        "Image Code": "https://cpimg.tistatic.com/03061694/b/4/tr:w-300/Urea-Granular.jpg",
+        "Desciption": "STRAIGHT NITROGENOUS FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Arun kalra",
+        "Seller Address": "Sahrasa, Patna"
+    },
+    {
+        "Fertilizer ID": "2009",
+        "Fertilizer Name": "Urea (Granular)",
+        "Cost": "154",
+        "Image Code": "https://3.imimg.com/data3/RG/MY/MY-4567835/1-250x250.jpg",
+        "Desciption": "STRAIGHT NITROGENOUS FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "V.K Tiwari",
+        "Seller Address": "Lakhimpur khiri, UP"
+    },
+    {
+        "Fertilizer ID": "2010",
+        "Fertilizer Name": "Urea Ammonium Nitrate (32%) (Liquid)",
+        "Cost": "145",
+        "Image Code": "https://sc01.alicdn.com/kf/HTB1Jm1fX6zuK1RjSsppq6xz0XXa9.jpg",
+        "Desciption": "STRAIGHT NITROGENOUS FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "tejashvi Yadav",
+        "Seller Address": "Adarsh colony, UP"
+    },
+    {
+        "Fertilizer ID": "2011",
+        "Fertilizer Name": "Neem Coated Urea",
+        "Cost": "69",
+        "Image Code": "https://www.thehindubusinessline.com/migration_catalog/article18174709.ece/ALTERNATES/LANDSCAPE_1200/neem-coated-urea",
+        "Desciption": "STRAIGHT NITROGENOUS FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Nisha devi",
+        "Seller Address": "Baksar,Bihar"
+    },
+    {
+        "Fertilizer ID": "2012",
+        "Fertilizer Name": "Single Superphosphate (16% P2O 5  Powdered)",
+        "Cost": "94",
+        "Image Code": "https://5.imimg.com/data5/NB/PZ/BA/SELLER-6797193/single-super-phosphate-16-p2o5-granulated--500x500.jpg",
+        "Desciption": "STRAIGHT PHOSPHATIC FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Nishant Kumar",
+        "Seller Address": "Patliputra, Bihar"
+    },
+    {
+        "Fertilizer ID": "2013",
+        "Fertilizer Name": "Omitted",
+        "Cost": "54",
+        "Image Code": "",
+        "Desciption": "STRAIGHT PHOSPHATIC FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Sahil",
+        "Seller Address": "Singh colony , Uttrakhand"
+    },
+    {
+        "Fertilizer ID": "2014",
+        "Fertilizer Name": "Triple Superphosphate",
+        "Cost": "132",
+        "Image Code": "https://sc02.alicdn.com/kf/HTB117EHKVXXXXaWaXXXq6xXFXXXV.jpg",
+        "Desciption": "STRAIGHT PHOSPHATIC FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Anmol Mital",
+        "Seller Address": "Tilak nagar , Uttrakhand"
+    },
+    {
+        "Fertilizer ID": "2015",
+        "Fertilizer Name": "Bone meal, Raw",
+        "Cost": "256",
+        "Image Code": "https://5.imimg.com/data5/GF/UX/MY-3042133/raw-bone-meal-500x500.jpg",
+        "Desciption": "STRAIGHT PHOSPHATIC FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Sakuntal Shree",
+        "Seller Address": "Subhash nagar, New Delhi"
+    },
+    {
+        "Fertilizer ID": "2016",
+        "Fertilizer Name": "Bone meal, Steamed",
+        "Cost": "245",
+        "Image Code": "https://img1.exportersindia.com/product_images/bc-full/2019/2/5780662/steamed-bone-meal-1549363582-4696570.jpeg",
+        "Desciption": "STRAIGHT PHOSPHATIC FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Gita Devi",
+        "Seller Address": "Shiv nagar, Delhi"
+    },
+    {
+        "Fertilizer ID": "2017",
+        "Fertilizer Name": "Rockphosphate",
+        "Cost": "200",
+        "Image Code": "https://5.imimg.com/data5/QJ/XU/MY-774089/rock-phosphate-powder-500x500.jpg",
+        "Desciption": "STRAIGHT PHOSPHATIC FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Seema Singh",
+        "Seller Address": "Danpur , UP"
+    },
+    {
+        "Fertilizer ID": "2018",
+        "Fertilizer Name": "Single Superphosphate (16% P2O 5  Granulated)",
+        "Cost": "75",
+        "Image Code": "https://5.imimg.com/data5/LN/PX/MY-774089/granulated-single-super-phosphate-250x250.jpg",
+        "Desciption": "STRAIGHT PHOSPHATIC FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Shalu Devi",
+        "Seller Address": "Rampura, UP"
+    },
+    {
+        "Fertilizer ID": "2019",
+        "Fertilizer Name": "Superphosphoric Acid (70% P2O 5  ) (Liquid)",
+        "Cost": "99",
+        "Image Code": "https://5.imimg.com/data5/EV/GE/MY-24747445/super-phosphoric-acid-500x500.jpg",
+        "Desciption": "STRAIGHT PHOSPHATIC FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Rashmi Singh",
+        "Seller Address": "Kashipur, Uttrakhand"
+    },
+    {
+        "Fertilizer ID": "2020",
+        "Fertilizer Name": "Potassium Sulphate",
+        "Cost": "64",
+        "Image Code": "https://5.imimg.com/data5/SX/DK/MY-2746590/potassium-sulphate-500x500.jpg",
+        "Desciption": "STRAIGHT POTASSIC FERTILIZERS",
+        "Seller Id": "",
+        "Seller name": "Harsh Vardhan",
+        "Seller Address": "Pilibhit, UP"
+    }
+]}
