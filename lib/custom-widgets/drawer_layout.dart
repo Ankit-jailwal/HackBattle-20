@@ -20,6 +20,8 @@ import 'package:ieeecrop/pages/agencies.dart';
 import 'package:ieeecrop/pages/fertilizer_screen.dart';
 import 'package:ieeecrop/pages/history.dart';
 import 'package:ieeecrop/pages/Main_menu.dart';
+import 'package:toast/toast.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:ieeecrop/pages/Profile_page.dart';
 import 'package:ieeecrop/pages/News_feed.dart';
 import 'package:ieeecrop/pages/pestcide_screen.dart';
@@ -228,240 +230,136 @@ class _DrawermainState extends State<Drawermain>
             endDrawer: ClipPath(
               clipper: _DrawerClipper(),
               child: Drawer(
-                child: SingleChildScrollView(
-                  child: Container(
-                    padding: const EdgeInsets.only(top: 48, bottom: 32),
-                    height: (orientation == Orientation.portrait)
-                        ? MediaQuery.of(context).size.height
-                        : MediaQuery.of(context).size.width,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: <Widget>[
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).pop();
-                            BlocProvider.of<DrawerBloc>(context)
-                                .add(DrawerEvents.menu);
-                          },
-                          child: Container(
-                            height: 40,
-                            width: 40,
-                            margin:
-                                const EdgeInsets.only(right: 20, bottom: 20),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            child: Icon(
-                              Icons.home,
-                              size: 34,
-                            ),
+                child: Container(
+                  padding: const EdgeInsets.only(top: 48, bottom: 32),
+                  height: (orientation == Orientation.portrait)
+                      ? MediaQuery.of(context).size.height
+                      : MediaQuery.of(context).size.width,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          BlocProvider.of<DrawerBloc>(context)
+                              .add(DrawerEvents.menu);
+                        },
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          margin:
+                              const EdgeInsets.only(right: 20, bottom: 20),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Theme.of(context).primaryColor,
+                          ),
+                          child: Icon(
+                            Icons.home,
+                            size: 34,
                           ),
                         ),
-                        DrawerItem(
-                          text: translations.text('menu.b1'),
-                          onPressed: () {
-                            Navigator.pop(context);
-                            BlocProvider.of<DrawerBloc>(context).add(
-                                DrawerEvents
-                                    .cam); //Drawer navigation to Event screen
-                          },
-                        ),
-                        DrawerItem(
-                          text: translations.text('menu.b2'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                            BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
-                                .news); //Drawer navigation to Create event screen
-                          },
-                        ),
-                        DrawerItem(
-                          text: translations.text('menu.b3'),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => WeatherMainScreen()),
+                      ),
+                      DrawerItem(
+                        text: translations.text('menu.b1'),
+                        onPressed: () {
+                          Navigator.pop(context);
+                          BlocProvider.of<DrawerBloc>(context).add(
+                              DrawerEvents
+                                  .cam); //Drawer navigation to Event screen
+                        },
+                      ),
+                      DrawerItem(
+                        text: translations.text('menu.b2'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                              .news); //Drawer navigation to Create event screen
+                        },
+                      ),
+                      DrawerItem(
+                        text: translations.text('menu.b7'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                              .nav); //Drawer navigation to Create event screen
+                        },
+                      ),
+                      DrawerItem(
+                        text: translations.text('menu.b3'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => WeatherMainScreen()),
+                          );
+                        }, //Drawer navigation to About page (Under construction)
+                      ),
+                      DrawerItem(
+                        text: translations.text('menu.b8'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                              .scheme); //Drawer navigation to Create event screen
+                        },
+                      ),
+                      DrawerItem(
+                        text: translations.text('menu.b4'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          launch("tel://1800-180-1551");
+                        }, //Drawer navigation to About page (Under construction)
+                      ),
+                      DrawerItem(
+                        text: translations.text('menu.b5'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          BlocProvider.of<DrawerBloc>(context)
+                              .add(DrawerEvents.history);
+                        }, //Drawer navigation to About page (Under construction)
+                      ),
+                      DrawerItem(
+                        text: translations.text('menu.b6'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          BlocProvider.of<DrawerBloc>(context)
+                              .add(DrawerEvents.about);
+                        }, //Drawer navigation to About page (Under construction)
+                      ),
+                      DropdownButton(
+                          value: state.locale.languageCode,
+                          items: translations.supportedLocales().map((l) {
+                            return DropdownMenuItem(
+                              child: Text(
+                                  '${get_lang(l.languageCode)} (${l.languageCode})'),
+                              value: l.languageCode,
                             );
-                          }, //Drawer navigation to About page (Under construction)
-                        ),
-                        DrawerItem(
-                          text: translations.text('menu.b4'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                            launch("tel://1800-180-1551");
-                          }, //Drawer navigation to About page (Under construction)
-                        ),
-                        DrawerItem(
-                          text: translations.text('menu.b5'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                            BlocProvider.of<DrawerBloc>(context)
-                                .add(DrawerEvents.history);
-                          }, //Drawer navigation to About page (Under construction)
-                        ),
-                        DrawerItem(
-                          text: translations.text('menu.b6'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                            BlocProvider.of<DrawerBloc>(context)
-                                .add(DrawerEvents.about);
-                          }, //Drawer navigation to About page (Under construction)
-                        ),
-                        DropdownButton(
-                            value: state.locale.languageCode,
-                            items: translations.supportedLocales().map((l) {
-                              return DropdownMenuItem(
-                                child: Text(
-                                    '${get_lang(l.languageCode)} (${l.languageCode})'),
-                                value: l.languageCode,
-                              );
-                            }).toList(),
-                            onChanged: (l) {
-                              BlocProvider.of<TranslationBloc>(context).add(
-                                SwitchLanguage(language: l),
-                              );
-                              print(l);
+                          }).toList(),
+                          onChanged: (l) {
+                            BlocProvider.of<TranslationBloc>(context).add(
+                              SwitchLanguage(language: l),
+                            );
+                            print(l);
 
-                            }),
-                        FlatButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                            _openSignOutDrawer(context);
-                          },
-                          child: RichText(
-                            text: TextSpan(children: [
-                              TextSpan(
-                                text: translations.text('login.out'), //Signout
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Theme.of(context).primaryColorDark,
-                                  fontWeight: FontWeight.w800,
-                                ),
+                          }),
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          _openSignOutDrawer(context);
+                        },
+                        child: RichText(
+                          text: TextSpan(children: [
+                            TextSpan(
+                              text: translations.text('login.out'), //Signout
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Theme.of(context).primaryColorDark,
+                                fontWeight: FontWeight.w800,
                               ),
-                            ]),
-                          ),
+                            ),
+                          ]),
                         ),
-                        Spacer(),
-                        Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Stack(
-                            //Social media handles
-                            children: <Widget>[
-                              Stack(
-                                alignment: Alignment.bottomRight,
-                                children: <Widget>[
-                                  IgnorePointer(
-                                    child: Container(
-                                      // comment or change to transparent color
-                                      height: 150.0,
-                                      width: 150.0,
-                                    ),
-                                  ),
-                                  Transform.translate(
-                                    offset: Offset.fromDirection(
-                                        getRadiansFromDegree(270),
-                                        degOneTranslationAnimation.value * 100),
-                                    child: Transform(
-                                      transform: Matrix4.rotationZ(
-                                          getRadiansFromDegree(
-                                              rotationAnimation.value))
-                                        ..scale(
-                                            degOneTranslationAnimation.value),
-                                      alignment: Alignment.center,
-                                      child: CircularButton(
-                                        color: Colors.blue,
-                                        width: 50,
-                                        height: 50,
-                                        icon: Icon(
-                                          FontAwesomeIcons.instagram,
-                                          color: Colors.white,
-                                        ),
-                                        onClick: () {
-                                          _launchInBrowser(_launchURL_insta);
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                  Transform.translate(
-                                    offset: Offset.fromDirection(
-                                        getRadiansFromDegree(225),
-                                        degTwoTranslationAnimation.value * 100),
-                                    child: Transform(
-                                      transform: Matrix4.rotationZ(
-                                          getRadiansFromDegree(
-                                              rotationAnimation.value))
-                                        ..scale(
-                                            degTwoTranslationAnimation.value),
-                                      alignment: Alignment.center,
-                                      child: CircularButton(
-                                        color: Colors.black,
-                                        width: 50,
-                                        height: 50,
-                                        icon: Icon(
-                                          FontAwesomeIcons.facebook,
-                                          color: Colors.white,
-                                        ),
-                                        onClick: () {
-                                          _launchInBrowser(_launchURL_fb);
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                  Transform.translate(
-                                    offset: Offset.fromDirection(
-                                        getRadiansFromDegree(180),
-                                        degThreeTranslationAnimation.value *
-                                            100),
-                                    child: Transform(
-                                      transform: Matrix4.rotationZ(
-                                          getRadiansFromDegree(
-                                              rotationAnimation.value))
-                                        ..scale(
-                                            degThreeTranslationAnimation.value),
-                                      alignment: Alignment.center,
-                                      child: CircularButton(
-                                        color: Colors.orangeAccent,
-                                        width: 50,
-                                        height: 50,
-                                        icon: Icon(
-                                          FontAwesomeIcons.linkedin,
-                                          color: Colors.white,
-                                        ),
-                                        onClick: () {
-                                          _launchInBrowser(_launchURL_lin);
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                  Transform(
-                                    transform: Matrix4.rotationZ(
-                                        getRadiansFromDegree(
-                                            rotationAnimation.value)),
-                                    alignment: Alignment.center,
-                                    child: CircularButton(
-                                      color: Colors.red,
-                                      width: 60,
-                                      height: 60,
-                                      icon: Icon(
-                                        Icons.menu,
-                                        color: Colors.white,
-                                      ),
-                                      onClick: () {
-                                        if (animationController.isCompleted) {
-                                          animationController.reverse();
-                                        } else {
-                                          animationController.forward();
-                                        }
-                                      },
-                                    ),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                      Spacer(),
+                    ],
                   ),
                 ),
               ),

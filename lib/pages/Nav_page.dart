@@ -3,16 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ieeecrop/Language/translation/global_translation.dart';
-import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:ieeecrop/bloc/drawer_bloc.dart';
-import 'package:ieeecrop/main.dart';
-import 'package:ieeecrop/second_screen.dart';
 import 'package:ieeecrop/pages/Sell_now.dart';
 import 'package:ieeecrop/pages/Rent_now.dart';
-import 'package:ieeecrop/services/authentication-service.dart';
-
-import '../Functions_and_route.dart';
 
 
 class nav_page extends StatelessWidget with DrawerStates{
@@ -46,7 +39,7 @@ class nav_page extends StatelessWidget with DrawerStates{
               child: Column(
                 children: [
                   SizedBox(height: 50,),
-                  Container(height:100,child: Image.asset("assets/images/shop.png")),
+                  Container(height:100,child: Image.asset("assets/shop.png")),
                   Text("Welcome to MAATI SHOP",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 24,color: Colors.green.withOpacity(0.8),fontFamily: "Anton"),),
                   SizedBox(height: 50,),
                   Text("Do you want to Shop or Sell?",style: TextStyle(fontSize:24,fontWeight: FontWeight.w700,fontFamily: "Saman"),),
@@ -83,7 +76,7 @@ class nav_page extends StatelessWidget with DrawerStates{
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Colors.green.withOpacity(0.6), borderRadius: BorderRadius.circular(10),),
+                                color: Colors.greenAccent.withOpacity(0.6), borderRadius: BorderRadius.circular(10),),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +92,7 @@ class nav_page extends StatelessWidget with DrawerStates{
                                     data.title,
                                     style: GoogleFonts.openSans(
                                         textStyle: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black45,
                                             fontSize: 16,
                                             fontWeight: FontWeight.w600)),
                                   ),

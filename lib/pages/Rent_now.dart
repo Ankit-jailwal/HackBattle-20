@@ -37,6 +37,9 @@ class _Rent_nowState extends State<Rent_now> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:AppBar(
+          title: Text("Rent your item here")
+      ),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.only(left: 16, right: 16),

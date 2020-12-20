@@ -207,7 +207,7 @@ get_lang(String lang){
 
 Future crop_api_call(String base64) async{
 
-  final String url="http://23.101.21.160:5000";
+  final String url="http://13.76.26.146:5000";
   var position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.best);
   String pos = (position.latitude).toString() +
@@ -215,7 +215,6 @@ Future crop_api_call(String base64) async{
       (position.longitude).toString();
   var res = await weatherApiProvider.fetchWeather1(
       position.longitude,position.longitude);
-
    print(res);
 
    var body = jsonDecode(res);

@@ -6,6 +6,7 @@ import 'package:ieeecrop/Language/translation/global_translation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ieeecrop/bloc/drawer_bloc.dart';
 import 'package:ieeecrop/Functions_and_route.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 
@@ -34,75 +35,94 @@ class _maaticamState extends State<maaticam> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.only(left: 16, right: 16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(
-                height: 10,
-              ),
-              Column(
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.only(left: 16, right: 16),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  FlatButton(
-                    onPressed: get_image,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: _image == null
-                          ? Image.asset(
-                              'assets/images/cam.jpg',
-                            )
-                          : Image.file(_image),
-                    ),
-                  ),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
-
-                  Container(
-                    height: 50,
-                    child: FlatButton(
-                      onPressed: () {},
-                      padding: EdgeInsets.all(0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Ink(
-                        decoration: BoxDecoration(
-                          color: Colors.green.withOpacity(0.6),
+                  Column(
+                    children: <Widget>[
+                      FlatButton(
+                        onPressed: get_image,
+                        child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
+                          child: _image == null
+                              ? Image.asset(
+                                  'assets/images/cam.jpg',
+                                )
+                              : Image.file(_image),
                         ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+
+                      Container(
+                        height: 50,
                         child: FlatButton(
-                          onPressed: ()  {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => output(_base64)),
-                            );
-                          },
-                          child: Container(
-                            alignment: Alignment.center,
-                            constraints: BoxConstraints(
-                                minHeight: 50, maxWidth: 300),
-                            child: Text(
-                              translations.text('cam.b1'),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                              textAlign: TextAlign.center,
+                          onPressed: () {},
+                          padding: EdgeInsets.all(0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                              color: Colors.green.withOpacity(0.6),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: FlatButton(
+                              onPressed: ()  {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => output(_base64)),
+                                );
+                              },
+                              child: Container(
+                                alignment: Alignment.center,
+                                constraints: BoxConstraints(
+                                    minHeight: 50, maxWidth: 300),
+                                child: Text(
+                                  translations.text('cam.b1'),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),
-            ],
+            ),
           ),
-        ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+              padding: EdgeInsets.only(right: 15, bottom: 15),
+              child: FloatingActionButton(
+                tooltip: "Back button!",
+                child: Icon(Icons.arrow_back_outlined),
+                backgroundColor: Colors.amberAccent,
+                onPressed: () {
+                  BlocProvider.of<DrawerBloc>(context)
+                      .add(DrawerEvents.menu);
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

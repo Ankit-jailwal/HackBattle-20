@@ -42,8 +42,8 @@ class Home extends StatelessWidget {
     page:"news",
   );
   Items item3 = new Items(
-    title: "Maati Shop",
-    subtitle: "",
+    title: translations.text('menu.b7'),
+    subtitle:"",
     img: "assets/shop.png",
     page:"shop",
   );
@@ -54,7 +54,7 @@ class Home extends StatelessWidget {
     page:"analysis",
   );
   Items item5 = new Items(
-    title: "Maati Services",
+    title: translations.text('menu.b8'),
     subtitle: "",
     img: "assets/teamwork.png",
     page:"ser",
@@ -112,7 +112,7 @@ class Home extends StatelessWidget {
                   }
                 else if(data.page=="shop") {
                   BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
-                      .scheme);
+                      .nav);
                 }
                 else if(data.page=="news") {
                   BlocProvider.of<DrawerBloc>(context).add(DrawerEvents

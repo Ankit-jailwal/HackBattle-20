@@ -71,7 +71,7 @@ class service extends StatelessWidget with DrawerStates{
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Colors.green.withOpacity(0.6), borderRadius: BorderRadius.circular(10),),
+                                color: Colors.tealAccent.withOpacity(0.6), borderRadius: BorderRadius.circular(10),),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
