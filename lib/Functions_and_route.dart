@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:ieeecrop/Weahter_API/resources/repository/remote/weather_api_provider.dart';
 import 'package:ieeecrop/main.dart';
@@ -248,9 +249,25 @@ Future getseed() async{
   else
     return null;
 }
+
+Future getschemes() async{
+  var jsonResult;
+  String data = await rootBundle.loadString('assets/json/schemes.json');
+  jsonResult = json.decode(data);
+  print(jsonResult);
+  return jsonResult;
+}
+
+Future getagencies() async{
+  var jsonResult;
+  String data = await rootBundle.loadString('assets/json/csvjson.json');
+  jsonResult = json.decode(data);
+  print(jsonResult);
+  return jsonResult;
+}
+
 Future getfertilizer() async{
   final String url="http://13.76.26.146:3000/fertilizers";
-
   final response= await http.get(url
   );
   var data=jsonDecode(response.body);

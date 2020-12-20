@@ -12,7 +12,11 @@ import 'package:ieeecrop/main.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ieeecrop/pages/Maati_shop.dart';
 import 'package:ieeecrop/pages/Nav_page.dart';
+import 'package:ieeecrop/pages/Rent_now.dart';
+import 'package:ieeecrop/pages/Schemes.dart';
+import 'package:ieeecrop/pages/Sell_now.dart';
 import 'package:ieeecrop/pages/about_us.dart';
+import 'package:ieeecrop/pages/agencies.dart';
 import 'package:ieeecrop/pages/fertilizer_screen.dart';
 import 'package:ieeecrop/pages/history.dart';
 import 'package:ieeecrop/pages/Main_menu.dart';
@@ -20,6 +24,7 @@ import 'package:ieeecrop/pages/Profile_page.dart';
 import 'package:ieeecrop/pages/News_feed.dart';
 import 'package:ieeecrop/pages/pestcide_screen.dart';
 import 'package:ieeecrop/pages/seed_screen.dart';
+import 'package:ieeecrop/pages/services.dart';
 import 'package:ieeecrop/pages/tool_screen.dart';
 import 'package:ieeecrop/second_screen.dart';
 import 'package:ieeecrop/services/authentication-service.dart';
@@ -506,6 +511,27 @@ String findSelectedTitle(DrawerStates state) {
   {
     return "Maati Shop";
   }
+  else if(state is scheme_screen)
+  {
+    return "Maati Schemes";
+  }
+  else if(state is Rent_now)
+  {
+    return "Maati Rent";
+  }
+  else if(state is Sell_now)
+  {
+    return "Maati Sell";
+  }
+  else if(state is agencies_screen)
+  {
+    return "Maati Agencies";
+  }
+  else if(state is service)
+  {
+    return "Maati Services";
+  }
+
 }
 
 //Signout animation and functionality

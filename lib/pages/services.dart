@@ -15,29 +15,24 @@ import 'package:ieeecrop/services/authentication-service.dart';
 import '../Functions_and_route.dart';
 
 
-class nav_page extends StatelessWidget with DrawerStates{
+class service extends StatelessWidget with DrawerStates{
   Items item1 = new Items(
-    title: "Buy",
+    title: "Schemes",
     subtitle: "",
-    img: "assets/buy.png",
-    page:"buy",);
+    img: "assets/offer.png",
+    page:"sch",);
 
   Items item2 = new Items(
-    title: "Sell",
+    title: "Agencies",
     subtitle: "",
-    img: "assets/commission.png",
-    page:"sell",
+    img: "assets/agency.png",
+    page:"agen",
   );
-  Items item3 = new Items(
-    title: "rent",
-    subtitle: "",
-    img: "assets/rent.png",
-    page:"rent",
-  );
+
 
   @override
   Widget build(BuildContext context) {
-    List<Items> myList = [item1, item2, item3];
+    List<Items> myList = [item1, item2];
     return Stack(
       children: [
         SafeArea(
@@ -46,16 +41,17 @@ class nav_page extends StatelessWidget with DrawerStates{
               child: Column(
                 children: [
                   SizedBox(height: 50,),
-                  Container(height:100,child: Image.asset("assets/images/shop.png")),
-                  Text("Welcome to MAATI SHOP",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 24,color: Colors.green.withOpacity(0.8),fontFamily: "Anton"),),
+                  Container(height:100,child: Image.asset("assets/teamwork.png")),
+                  SizedBox(height: 5,),
+                  Text("Welcome to MAATI SERVICES",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 24,color: Colors.green.withOpacity(0.8),fontFamily: "Anton"),),
                   SizedBox(height: 50,),
-                  Text("Do you want to Shop or Sell?",style: TextStyle(fontSize:24,fontWeight: FontWeight.w700,fontFamily: "Saman"),),
+                  Text("Do you want to see agencies or schemes?",style: TextStyle(fontSize:24,fontWeight: FontWeight.w700,fontFamily: "Saman",),textAlign: TextAlign.center,),
                   SizedBox(height: 20,),
                   Flexible(
                     child: GridView.count(
                         childAspectRatio: 1.0,
                         padding: EdgeInsets.only(left: 16, right: 16),
-                        crossAxisCount: 3,
+                        crossAxisCount: 2,
                         crossAxisSpacing: 18,
                         mainAxisSpacing: 18,
                         children: myList.map((data) {
@@ -63,23 +59,15 @@ class nav_page extends StatelessWidget with DrawerStates{
                             onTap: () async{
                               HapticFeedback.selectionClick();
                               print("tapped");
-                              if(data.page=="buy") {
+                              if(data.page=="sch") {
                                 BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
-                                    .shop);
+                                    .scheme);
                               }
-                              else if(data.page=="sell") {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => Sell_now()),
-                                );
+                              else if(data.page=="agen") {
+                                BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                                    .agen);
                               }
-                              else if(data.page=="rent")
-                              {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => Rent_now()),
-                                );
-                              }
+
                             },
                             child: Container(
                               decoration: BoxDecoration(

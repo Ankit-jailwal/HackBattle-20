@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ieeecrop/bloc/drawer_bloc.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'package:image_picker/image_picker.dart';
@@ -9,7 +10,7 @@ import 'package:ieeecrop/pages/success.dart';
 
 //Create new event or edit existing event Screen
 
-class Sell_now extends StatefulWidget {
+class Sell_now extends StatefulWidget with DrawerStates{
   @override
   _Sell_nowState createState() => _Sell_nowState();
 }

@@ -306,7 +306,7 @@ class _seed_screenState extends State<seed_screen> {
                                                           children: [
                                                             GestureDetector(
                                                               onTap:(){
-                                                                openCheckout(210,snapshot.data['Data'][index]['Seed Name']);
+                                                                openCheckout(int.parse(snapshot.data['Data'][index]['Cost']),snapshot.data['Data'][index]['Seed Name']);
                                                               },
                                                               child: Container(
                                                                 height:
@@ -377,17 +377,35 @@ class _seed_screenState extends State<seed_screen> {
                   ),
                   Align(
                     alignment: Alignment.bottomRight,
-                    child: Padding(
-                      padding: EdgeInsets.only(right: 15,bottom: 15),
-                      child: FloatingActionButton(
-                        tooltip: "Maati smart search",
-                        child: Icon(Icons.search),
-                        backgroundColor: Colors.amberAccent,
-                        onPressed: () {
-                          BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
-                              .cam);
-                        },
-                      ),
+                    child: Row
+                      (
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(right: 5,bottom: 15),
+                          child: FloatingActionButton(
+                            tooltip: "Maati smart search",
+                            child: Icon(Icons.search),
+                            backgroundColor: Colors.amberAccent,
+                            onPressed: () {
+                              BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                                  .cam);
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 15,bottom: 15),
+                          child: FloatingActionButton(
+                            tooltip: "Back button!",
+                            child: Icon(Icons.arrow_back_rounded),
+                            backgroundColor: Colors.amberAccent,
+                            onPressed: () {
+                              BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                                  .shop);
+                            },
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

@@ -1,0 +1,149 @@
+{
+    "Andhra Pradesh": {
+        "States": "Andhra Pradesh",
+        "APMC": "Pattikonda",
+        "Address": "Gooty Road, Near By-Pass Road, Pathikonda.",
+        "Contact": "knlamcpkd@gmail.com 08520-226031,7331154930",
+        "Image": "https://assets.thehansindia.com/h-upload/2020/01/03/251000-andhra-pradesh.jpg"
+    },
+    "Chandigarh": {
+        "States": "Chandigarh",
+        "APMC": "Chandigarh Grain Market",
+        "Address": "Sector 26 (Chandigarh) Pin- 160019",
+        "Contact": "0172-2790342",
+        "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyg2sTvthTcZBitbol-F1BAPknSrkCNe9SQA&usqp=CAU"
+    },
+    "Chhattisgarh": {
+        "States": "Chhattisgarh",
+        "APMC": "Durg",
+        "Address": "Krishi Upaj Mandi Samiti Durg,Dhamdha naka durg",
+        "Contact": "mandi.durg.cg@gmail.com 0788-2216642,9407608989",
+        "Image": "https://www.onefivenine.com/images/StateMaps/Chhatitisgarh.jpg"
+    },
+    "Gujarat": {
+        "States": "Gujarat",
+        "APMC": "Rapar",
+        "Address": "Agricultural Produce Market Committee. Market Yard, Rapar",
+        "Contact": "apmcrapar @rediffmail.com 02830 293229",
+        "Image": "https://www.onefivenine.com/images/StateMaps/Gujarat.jpg"
+    },
+    "Haryana": {
+        "States": "Haryana",
+        "APMC": "Sirsa",
+        "Address": "N.H.-9 (Sirsa- Dabwali Road)",
+        "Contact": "sceosirsa@gmail.com 01666-220613",
+        "Image": "https://diligentias.com/wp-content/uploads/2019/05/haryana-1-1.gif"
+    },
+    "Puducherry": {
+        "States": "Puducherry",
+        "APMC": "Thattanchavadi",
+        "Address": "Pondicherry Market committee, Thattanchavady Pin-605009",
+        "Contact": "pmc-sec.py@gov.in 9789399884",
+        "Image": "https://www.researchgate.net/profile/Ponnuchamy_Raja2/publication/280131314/figure/fig2/AS:391511083634690@1470354924113/Map-of-Pondicherry-and-its-surroundings-showing-the-locations-and-their-profiles_Q640.jpg"
+    },
+    "Punjab": {
+        "States": "Punjab",
+        "APMC": "Hoshiarpur",
+        "Address": "Market committee, phagwara road rahimpur, hoshiarpur",
+        "Contact": "pmb.smchpur@punjabmail.gov.in 01882-248547,9915050860",
+        "Image": "https://www.culturenorthindia.com/wp-content/uploads/2014/03/punjab.png"
+    },
+    "Rajasthan": {
+        "States": "Rajasthan",
+        "APMC": "Ramganj",
+        "Address": "Krishi UpSamiti, Near Railway station",
+        "Contact": "awmrjram@raj.nic.in 07459-220051/220104/222104",
+        "Image": "https://www.infoandopinion.com/wp-content/uploads/2019/09/Rajasthan-map-Districts.jpg"
+    },
+    "Tamil Nadu": {
+        "States": "Tamil Nadu",
+        "APMC": "PANRUTI",
+        "Address": "REGULATED MARKET,DIVERSION ROAD ,PANRUTI-607106,CUDDALORE DISTRICT,TAMIL NADU, PIN - 607106",
+        "Contact": "rmcpanruti@gmail.com, 8825601614",
+        "Image": "https://www.onefivenine.com/images/StateMaps/Tamilnadu.jpg"
+    },
+    "Uttar Pradesh": {
+        "States": "Uttar Pradesh",
+        "APMC": "Meerut",
+        "Address": "Krishi Utpadan Mandi Samiti,Meerut Delhi highway,Meerut",
+        "Contact": "amdmee@up.nic.in 8765956755",
+        "Image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftrackthemissingchild.gov.in%2Ftrackchild%2Fup&psig=AOvVaw0lxhTpHL4l6GV32u4957FD&ust=1608504172338000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCj_5CP2-0CFQAAAAAdAAAAABAD"
+    },
+    "Uttarakhand": {
+        "States": "Uttarakhand",
+        "APMC": "Vikasnagar",
+        "Address": "Naveen mandi sthal, Babugarh Vikasnagar Pin-248198",
+        "Contact": "vikash-agrmdi-ua@nic.in 01360-250880,9837752079",
+        "Image": "https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.onefivenine.com%2Findia%2Fvillag%2Fstate%2FUttarakhand&psig=AOvVaw0jYoxOpmiQou0dYjyuIn07&ust=1608504133336000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMD7pf6O2-0CFQAAAAAdAAAAABAD"
+    },
+    "Himachal Pradesh": {
+        "States": "Himachal Pradesh",
+        "APMC": "Una",
+        "Address": "Agricultural Produce Market Committee, near old bus stand, Amb road, Una H.P.",
+        "Contact": "awmuna-hp@nic.in 01975-225097,9418075798",
+        "Image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdiligentias.com%2Fhimachal-pradesh-state-information-upsc%2F&psig=AOvVaw1uHlckKE-RVySsB61QkxvL&ust=1608504088327000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLDBiumO2-0CFQAAAAAdAAAAABAD"
+    },
+    "Jammu and Kashmir": {
+        "States": "Jammu and Kashmir",
+        "APMC": "PARIMPORA SGR",
+        "Address": "FRUIT VEGETABLE MARKET, PARIMPORA SGR, PIN - 190017",
+        "Contact": "amosgr6@gmail.com, 7006684275",
+        "Image": "https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.onefivenine.com%2Findia%2Fvillag%2Fstate%2FJammu-_2a-Kashmir&psig=AOvVaw3uT-xbrSpblwGnN0_aECsl&ust=1608503960898000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNihs72O2-0CFQAAAAAdAAAAABAD"
+    },
+    "Jharkhand": {
+        "States": "Jharkhand",
+        "APMC": "Pandra Ranchi",
+        "Address": "APMC, Pandra, Ranchi-05, Jharkhand",
+        "Contact": "apmc_ranchi@yahoo.co.in 0651-2510602",
+        "Image": "https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.onefivenine.com%2Findia%2Fvillag%2Fstate%2FJharkhand&psig=AOvVaw2QuLJI45HECT4N-u0phS0F&ust=1608503878638000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMC8roWO2-0CFQAAAAAdAAAAABAD"
+    },
+    "Karnataka": {
+        "States": "Karnataka",
+        "APMC": "APMC KALBURGI",
+        "Address": "APMC KALBURGI, NEHRU GUNJ , Gulbarga, PIN - 585102",
+        "Contact": "apmcgulbarga@rediffmail.com, 8472257469",
+        "Image": "https://www.google.com/imgres?imgurl=http%3A%2F%2Fkarenvis.nic.in%2FWriteReadData%2FUserFiles%2Fimage%2F2018-19%2Fkarmap1.PNG&imgrefurl=http%3A%2F%2Fkarenvis.nic.in%2FContent%2FKarnatakaProfile_7022.aspx&tbnid=vNK6SW4CaxQCjM&vet=12ahUKEwjliY_4jdvtAhXhnUsFHZUzCdIQMygAegUIARDIAQ..i&docid=J1hcIlS_gm-sqM&w=463&h=616&q=image%20of%20karnataka%20state&ved=2ahUKEwjliY_4jdvtAhXhnUsFHZUzCdIQMygAegUIARDIAQ"
+    },
+    "Kerala": {
+        "States": "Kerala",
+        "APMC": "AUWM ANAYARA",
+        "Address": "AUWM ANAYARA, Thiruvananthapuram, PIN - 695029",
+        "Contact": "auwmanayara@gmail.com, 9447242231",
+        "Image": "https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.onefivenine.com%2Findia%2Fvillag%2Fstate%2FKerala&psig=AOvVaw00EgE1gAjmdGvHeB_Sp40q&ust=1608503779391000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPDq09aN2-0CFQAAAAAdAAAAABAD"
+    },
+    "Telangana": {
+        "States": "Telangana",
+        "APMC": "Choppadandi",
+        "Address": "Secretary, AMC, Choppadandi",
+        "Contact": "amcchoppadandi@yahoo.com 0878-2281473",
+        "Image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.telangana.gov.in%2Fabout%2Fdistricts&psig=AOvVaw09a1y1_jyhT2gsZ55g6hgg&ust=1608503554312000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLjDzOuM2-0CFQAAAAAdAAAAABAD"
+    },
+    "West Bengal": {
+        "States": "West Bengal",
+        "APMC": "Islampur Principal Market Yard",
+        "Address": "At - Teenpool, PO+PS - Islampur, adjacent to Islampur Loadhan Road & Patagora Road, Dist. Uttar Dinajpur",
+        "Contact": "uttardinajpurzillarmc@gmail.com 03523246270,9475610251",
+        "Image": "https://www.google.com/url?sa=i&url=http%3A%2F%2Fdhanviservices.com%2Fwest-bengal-companies-colleges-places%2Fwest-bengal-state-districts-area-population-other-information%2F&psig=AOvVaw3n2my5XbCsBOLpZeQeRoJQ&ust=1608503487197000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCFys-M2-0CFQAAAAAdAAAAABAJ"
+    },
+    "Madhya Pradesh ": {
+        "States": "Madhya Pradesh ",
+        "APMC": "Hoshangabad",
+        "Address": "KRISHI UPAJ MANDI SAMITI-BANAPURA, TEHSIL NAME: SEONI-MALWA , DISTRICT NAME:- HOSHANGABAD , STATE:- MADHYA PRADESH, PIN -461221",
+        "Contact": "mpapmcbanapura@gmail.com, 8982181275",
+        "Image": "https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.onefivenine.com%2Findia%2Fvillag%2Fstate%2FMadhya-Pradesh&psig=AOvVaw3ewRrfR1jgVosaZvXCNAYx&ust=1608503204335000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjCw8SL2-0CFQAAAAAdAAAAABAO"
+    },
+    "Maharashtra": {
+        "States": "Maharashtra",
+        "APMC": "Sindevahi",
+        "Address": "MAIN ROAD SAONER, TA. SAONER, DIST - NAGPUR, PIN - 441107",
+        "Contact": "datey8666@gmail.com, 9923081851",
+        "Image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fzeenews.india.com%2Fmumbai%2Fwhat-is-maharashtra-day-a-10-point-guide-to-the-holiday-and-celebrations-2104226.html&psig=AOvVaw1U0ofB1qsILL_ujLffgA2q&ust=1608503138095000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOiKhamL2-0CFQAAAAAdAAAAABAD"
+    },
+    "Odisha": {
+        "States": "Odisha",
+        "APMC": "ANGUL",
+        "Address": "REGULATED MARKET COMMITTEE , ANGUL , AT/PO - HAKIMPARA , DIST - ANGUL, PIN - 759143",
+        "Contact": "rmcangul@gmail.com, 8917214569",
+        "Image": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fodishanewsinsight.com%2Fwp-content%2Fuploads%2F2018%2F12%2FOdisha.png&imgrefurl=https%3A%2F%2Fodishanewsinsight.com%2Fodisha%2Fodisha-may-get-4-new-districts-soon%2F&tbnid=rrwSbKULrS-19M&vet=12ahUKEwjT8KX5itvtAhVJVCsKHTFmAO8QMygcegUIARCHAg..i&docid=Dwajmm37oBtgfM&w=547&h=334&q=image%20of%20odisha&ved=2ahUKEwjT8KX5itvtAhVJVCsKHTFmAO8QMygcegUIARCHAg"
+    }
+}

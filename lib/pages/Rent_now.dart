@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ieeecrop/bloc/drawer_bloc.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'package:image_picker/image_picker.dart';
@@ -9,7 +10,7 @@ import 'package:ieeecrop/pages/success.dart';
 
 //Create new event or edit existing event Screen
 
-class Rent_now extends StatefulWidget {
+class Rent_now extends StatefulWidget with DrawerStates{
   @override
   _Rent_nowState createState() => _Rent_nowState();
 }
@@ -36,9 +37,6 @@ class _Rent_nowState extends State<Rent_now> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
-          title: Text("Rent your item here")
-      ),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.only(left: 16, right: 16),

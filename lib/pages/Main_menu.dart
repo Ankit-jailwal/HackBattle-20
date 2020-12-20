@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,7 +9,6 @@ import 'package:ieeecrop/Language/translation/global_translation.dart';
 import 'package:ieeecrop/Weahter_API/ui/screen/weather_main_screen.dart';
 import 'package:ieeecrop/bloc/drawer_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:ieeecrop/pages/Nav_page.dart';
 
 class Main_menu extends StatefulWidget with DrawerStates{
   @override
@@ -53,27 +54,35 @@ class Home extends StatelessWidget {
     page:"analysis",
   );
   Items item5 = new Items(
+    title: "Maati Services",
+    subtitle: "",
+    img: "assets/teamwork.png",
+    page:"ser",
+  );
+
+  Items item6 = new Items(
     title: translations.text('menu.b4'),
     subtitle: "",
     img: "assets/images/phone.png",
     page:"call",
   );
-  Items item6 = new Items(
+  Items item7 = new Items(
     title: translations.text('menu.b5'),
     subtitle: "",
     img: "assets/images/history.png",
     page:"history",
   );
-  Items item7 = new Items(
+  Items item8 = new Items(
     title: translations.text('menu.b6'),
     subtitle: "",
     img: "assets/images/contact.png",
     page:"contact",
   );
 
+
   @override
   Widget build(BuildContext context) {
-    List<Items> myList = [item1, item2, item3, item4, item5, item6,item7];
+    List<Items> myList = [item1, item2, item3, item4, item5, item6,item7,item8];
     return Flexible(
       child: GridView.count(
           childAspectRatio: 1.0,
@@ -103,7 +112,7 @@ class Home extends StatelessWidget {
                   }
                 else if(data.page=="shop") {
                   BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
-                      .nav);
+                      .scheme);
                 }
                 else if(data.page=="news") {
                   BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
@@ -119,10 +128,15 @@ class Home extends StatelessWidget {
                   BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
                       .about);
                 }
+                else if(data.page=="ser")
+                {
+                  BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                      .ser);
+                }
               },
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.green.withOpacity(0.6), borderRadius: BorderRadius.circular(10),),
+                  color: Colors.greenAccent.withOpacity(0.6), borderRadius: BorderRadius.circular(10),),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -137,7 +151,7 @@ class Home extends StatelessWidget {
                       data.title,
                       style: GoogleFonts.openSans(
                           textStyle: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black45,
                               fontSize: 16,
                               fontWeight: FontWeight.w600)),
                     ),

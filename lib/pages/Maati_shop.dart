@@ -51,96 +51,113 @@ class maati_shop extends StatelessWidget with DrawerStates{
   @override
   Widget build(BuildContext context) {
     List<Items> myList = [item1, item2, item3, item4];
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-
-      Column(
-        children: [
-          Padding(
-            padding:
-            EdgeInsets.symmetric(horizontal: 50),
-            child:Text(
-              "Shop by Categories",
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.black
+    return Stack(
+      children: [
+        SingleChildScrollView(
+          child: Column(
+            children: [
+          Column(
+            children: [
+              Padding(
+                padding:
+                EdgeInsets.symmetric(horizontal: 50),
+                child:Text(
+                  "Shop by Categories",
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                  ),
+                ),
               ),
+              SizedBox(height: 20),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFFfff7e8),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: GridView.count(
+                    shrinkWrap: true,
+                    physics: new NeverScrollableScrollPhysics(),
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    children: myList.map((item) => GestureDetector(
+                      onTap: () async{
+                        if(item.page =="seed")
+                        {BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                            .seed);}
+                        else if(item.page =="ferti")
+                        {BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                            .ferti);}
+                        else if(item.page =="pest")
+                        {BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                            .pest);}
+                        else if(item.page =="tool")
+                        {BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                            .tool);}
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.only(top:10,left: 7,right: 7,bottom: 5),
+                        child: Container(
+                          padding: EdgeInsets.only(left: 5,right: 5,top: 8, bottom: 8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color(0xFFffefaf),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 110,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),
+                                    image: DecorationImage(
+                                        image: AssetImage(item.img),
+
+                                    )
+                                ),
+                              ),
+                              SizedBox(height: 5,),
+                              Container(
+                                height: 35,
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white
+                                ),
+                                child: Center(child: Text(item.title,style: TextStyle(color: Colors.black,fontWeight: FontWeight.w700),textAlign: TextAlign.center,)),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    )).toList(),
+                  ),
+                ),
+              )
+            ],
+          ),
+              SizedBox(height: 18),
+            ],
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomRight,
+          child: Padding(
+            padding: EdgeInsets.only(right: 15,bottom: 15),
+            child: FloatingActionButton(
+              tooltip: "Back button!",
+              child: Icon(Icons.arrow_back_rounded),
+              backgroundColor: Colors.amberAccent,
+              onPressed: () {
+                BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
+                    .nav);
+              },
             ),
           ),
-          SizedBox(height: 20),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFFfff7e8),
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: GridView.count(
-                shrinkWrap: true,
-                physics: new NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                children: myList.map((item) => GestureDetector(
-                  onTap: () async{
-                    if(item.page =="seed")
-                    {BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
-                        .seed);}
-                    else if(item.page =="ferti")
-                    {BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
-                        .ferti);}
-                    else if(item.page =="pest")
-                    {BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
-                        .pest);}
-                    else if(item.page =="tool")
-                    {BlocProvider.of<DrawerBloc>(context).add(DrawerEvents
-                        .tool);}
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.only(top:10,left: 7,right: 7,bottom: 5),
-                    child: Container(
-                      padding: EdgeInsets.only(left: 5,right: 5,top: 8, bottom: 8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Color(0xFFffefaf),
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            height: 110,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                image: DecorationImage(
-                                    image: AssetImage(item.img),
-
-                                )
-                            ),
-                          ),
-                          SizedBox(height: 5,),
-                          Container(
-                            height: 35,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white
-                            ),
-                            child: Center(child: Text(item.title,style: TextStyle(color: Colors.black,fontWeight: FontWeight.w700),textAlign: TextAlign.center,)),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                )).toList(),
-              ),
-            ),
-          )
-        ],
-      ),
-          SizedBox(height: 18),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
