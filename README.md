@@ -8,6 +8,10 @@ Ankit Jailwal, IIIrd Semester - jailwalankit@gmail.com
 
 Shivam Sawarn, IIIrd Semester - shivamsawarn@ieee.org
 
+Abhishek Kumar - mr.abhishekkumar2024@gmail.com
+
+Vivek Kaushik - vivekkaushik485@gmail.com
+
 
 #### Problem Statement - 
 Selecting Crops for farmers is a hectic job as they have to consider many different factors. Hence, developing an app which will help farmers in making their jobs easy.
